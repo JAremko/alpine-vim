@@ -4,7 +4,7 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 ENV HOME /home/developer
 RUN apk --update add git python --virtual build-deps go bash build-base \
-      python-dev clang boost llvm gcc curl perl && rm -rf /var/cache/apk/*
+      python-dev clang cmake boost llvm gcc curl perl && rm -rf /var/cache/apk/*
 #add developer:developer user:group
 RUN addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \ 
