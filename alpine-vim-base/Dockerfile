@@ -14,7 +14,7 @@ RUN apk --update add --virtual python build-deps bash python-dev ctags build-bas
                 --enable-acl \
                 --disable-gui \
                 --disable-netbeans \
-                --prefix /usr \
+                --prefix /usr && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74 && \
     make install && \
     apk del build-deps && \
