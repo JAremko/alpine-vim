@@ -1,4 +1,7 @@
 FROM jare/alpine-vim:base
+
+MAINTAINER JAremko <w3techplaygound@gmail.com>
+
 ENV HOME /home/developer
 RUN apk --update add git python --virtual build-deps go bash build-base \
       python-dev clang boost llvm gcc curl perl && rm -rf /var/cache/apk/*

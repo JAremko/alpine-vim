@@ -1,5 +1,7 @@
 FROM alpine:edge
+
 MAINTAINER JAremko <w3techplaygound@gmail.com>
+
 RUN apk --update add --virtual python build-deps bash python-dev ctags build-base \
       make mercurial libxpm-dev libx11-dev libxt-dev ncurses-dev git gcc cmake && \
     cd /tmp && \
