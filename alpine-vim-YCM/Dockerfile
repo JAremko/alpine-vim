@@ -21,6 +21,7 @@ RUN mkdir -p /home/developer/.vim/sources_non_forked/YouCompleteMe && \
     cd /home/developer/.vim/sources_non_forked/YouCompleteMe && \
     git clone https://github.com/Valloric/YouCompleteMe.git . && \
     git submodule update --init --recursive
+RUN /home/developer/.vim/sources_non_forked/YouCompleteMe/install.sh --clang-completer --gocode-completer
 RUN cd /tmp/ && \
     mkdir ycm_build && \
     cd ./ycm_build && \ 
@@ -28,9 +29,8 @@ RUN cd /tmp/ && \
       . /home/developer/.vim/sources_non_forked/YouCompleteMe && \
     make ycm_support_libs -DEXTERNAL_LIBCLANG_PATH=/usr/lib/libclang.so && \
     rm -rf /tmp/*
-RUN /home/developer/.vim/sources_non_forked/YouCompleteMe/install.sh --clang-completer --gocode-completer
 RUN chown developer:developer -R /home/developer && \
-    chmod 777 -R /home/developer
+    chmod 775 -R /home/developer
 RUN apk del build-deps && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
