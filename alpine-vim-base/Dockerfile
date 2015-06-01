@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN apk --update add --virtual python build-deps bash python-dev ctags build-base \
+RUN apk --update add --virtual build-deps python bash python-dev ctags build-base \
       make mercurial libxpm-dev libx11-dev libxt-dev ncurses-dev git && \
     cd /tmp && \
     hg clone https://code.google.com/p/vim/ && \
