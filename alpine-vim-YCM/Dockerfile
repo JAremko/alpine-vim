@@ -26,8 +26,7 @@ RUN cd /tmp/ && \
     mkdir ycm_build && \
     cd ./ycm_build && \ 
     cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/usr/share/llvm \
-      . /home/developer/.vim/sources_non_forked/YouCompleteMe && \
-    cd /home/developer/.vim/sources_non_forked/YouCompleteMe && \
+      . /home/developer/.vim/sources_non_forked/YouCompleteMe/third_party/ycmd/cpp && \
     make ycm_support_libs -DEXTERNAL_LIBCLANG_PATH=/usr/lib/libclang.so && \
     rm -rf /tmp/*
 RUN chown developer:developer -R /home/developer && \
