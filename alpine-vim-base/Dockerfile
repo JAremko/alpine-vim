@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
