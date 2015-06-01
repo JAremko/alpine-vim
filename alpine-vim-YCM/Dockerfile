@@ -3,8 +3,8 @@ FROM jare/alpine-vim:base
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 ENV HOME /home/developer
-RUN apk --update add git python --virtual build-deps go bash alpine-sdk \
-      python-dev clang cmake llvm curl perl && rm -rf /var/cache/apk/*
+RUN apk --update add python --virtual build-deps go bash python-dev git \
+      llvm curl perl build-base cmake && rm -rf /var/cache/apk/*
 #add developer:developer user:group
 RUN addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \ 
@@ -20,18 +20,17 @@ RUN mkdir -p /home/developer/.vim/autoload /home/developer/.vim/sources_non_fork
 RUN mkdir -p /home/developer/.vim/sources_non_forked/YouCompleteMe && \
     cd /home/developer/.vim/sources_non_forked/YouCompleteMe && \
     git clone https://github.com/Valloric/YouCompleteMe.git . && \
-    git submodule update --init --recursive
-RUN /home/developer/.vim/sources_non_forked/YouCompleteMe/install.sh --clang-completer --gocode-completer
-RUN cd /tmp/ && \
-    mkdir ycm_build && \
-    cd ./ycm_build && \ 
-    cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/usr/share/llvm \
-      . /home/developer/.vim/sources_non_forked/YouCompleteMe
-RUN cd ./ycm_build && make ycm_support_libs && rm -rf /tmp/*
+    git submodule update --init --recursive && \
+    /home/developer/.vim/sources_non_forked/YouCompleteMe/install.sh \
+      --clang-completer --gocode-completer
+
 RUN chown developer:developer -R /home/developer && \
-    chmod 777 -R /home/developer
+    chmod 775 -R /home/developer
+
+#cleanup
 RUN apk del build-deps && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
+
 USER developer
 ONBUILD USER root
