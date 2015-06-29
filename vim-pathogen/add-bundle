@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/developer/bundle/ && cp * .[^.]* -rf /home/developer/preinstalled/
+cp -rf /home/developer/bundle /home/developer/preinstalled
 if [ -f /home/developer/bundle/.vimrc ]; then 
   sed -i '/source \/home\/developer\/preinstalled\/\.vimrc/d' /home/developer/.vimrc
   sed -i '/source \/home\/developer\/bundle\/\.vimrc/d' /home/developer/.vimrc
