@@ -3,9 +3,8 @@ FROM jare/alpine-vim:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 # start scirt
-COPY vim /home/developer/
-COPY install /usr/bin/
-RUN chmod 775 /home/developer/vim /usr/bin/install && \
+ADD run add-bundle /home/developer/
+RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
 #add user:group "developer:developer" with home "/home/developer". Root privilege and no password.
     addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \
@@ -19,9 +18,11 @@ RUN chmod 775 /home/developer/vim /usr/bin/install && \
        >> /home/developer/.vimrc && \
     echo "syntax on " >> /home/developer/.vimrc && \
     echo "filetype plugin indent on " >> /home/developer/.vimrc && \
+#finaliz
+    chown developer:developer -R /home/developer && \
 #cleanup
-  apk del curl && rm -rf /var/cache/apk/*
+    apk del curl && rm -rf /var/cache/apk/*
 
 USER developer
 WORKDIR /home/developer/
-ENTRYPOINT "/home/developer/vim"
+ENTRYPOINT ["sh", "/home/developer/run"]
