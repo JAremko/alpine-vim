@@ -8,10 +8,10 @@ RUN apk --update add --virtual build-deps python bash python-dev ctags build-bas
     hg clone https://code.google.com/p/vim/ && \
     cd /tmp/vim && \
     ./configure --with-features=normal \
-                --enable-multibyte \
+                #needed for editing text in languages which have many characters
+                --enable-multibyte \     
+                #python interop needed for some of my plugins
                 --enable-pythoninterp \
-                --with-x=yes \
-                --enable-acl \
                 --disable-gui \
                 --disable-netbeans \
                 --prefix /usr && \
@@ -19,5 +19,11 @@ RUN apk --update add --virtual build-deps python bash python-dev ctags build-bas
     make install && \
     apk del build-deps && \
     apk --update add libsm libice libxt libx11 ncurses && \
-    rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
+    #deleting docs, tutorials, icons and lang
+    rm -rf /usr/share/vim/vim74/doc/* /usr/share/man/* /usr/share/icons/* \
+      /usr/share/doc/* /tmp/* /var/cache/* /var/log/* /var/tmp/* && \
+    cd /usr/share/vim/vim74/ && \ 
+    rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim && \
+    find . -name *.txt | while read line; do rm "$line"; done
+
+ENTRYPOINT ["vim"]
