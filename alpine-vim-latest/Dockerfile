@@ -12,7 +12,7 @@ RUN chmod 775 /home/developer/vim && \
     mkdir -p /home/developer/ && chown -R developer:developer /home/developer && \
     echo "%developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
 #install vim Pathogen
-    apk add curl && \
+    apk --update add curl && \
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle /home/developer/preinstalled && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
     echo "execute pathogen#infect('/home/developer/bundle/{}', '/home/developer/preinstalled{}')" \
