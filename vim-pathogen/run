@@ -2,4 +2,4 @@
 if [ -f /home/developer/bundle/.vimrc ]; then 
   echo "source /home/developer/bundle/.vimrc" >> /home/developer/.vimrc
 fi
-exec vim "${@:2}"
+exec vim "$2"
