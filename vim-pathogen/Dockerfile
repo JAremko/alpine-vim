@@ -4,8 +4,8 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 # start scirt
 COPY vim /home/developer/
-
-RUN chmod 775 /home/developer/vim && \
+COPY install /usr/bin/
+RUN chmod 775 /home/developer/vim /usr/bin/install && \
 #add user:group "developer:developer" with home "/home/developer". Root privilege and no password.
     addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \
