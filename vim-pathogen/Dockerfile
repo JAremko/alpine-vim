@@ -5,11 +5,11 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 # start scirt
 ADD run add-bundle /home/developer/
 RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
-#add user:group "developer:developer" with home "/home/developer". Root privilege and no password.
+#add user:group "developer:developer" with home "/home/developer".
     addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \
     mkdir -p /home/developer/ && chown -R developer:developer /home/developer && \
-    echo "%developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoersi && \
+    echo "%developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
 #make a directory for plugin plugins
     mkdir /bundle/ && chown developer:developer /bundle/ && \
 #install vim Pathogen
