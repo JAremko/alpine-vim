@@ -1,6 +1,0 @@
-#!/bin/bash
-mv -r /home/developer/bundle/* /home/developer/preinstalled/
-if [ -f /home/developer/bundle/.vimrc ]; then 
-  sed -i '/source \/home\/developer\/preinstalled\/\.vimrc/d' /home/developer/.vimrc
-  echo "source /home/developer/preinstalled/.vimrc" >> /home/developer/.vimrc
-fi
