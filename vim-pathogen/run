@@ -1,5 +1,14 @@
 #!/bin/bash
-if [ -f /home/developer/bundle/.vimrc ]; then 
-  echo "source /home/developer/bundle/.vimrc" >> /home/developer/.vimrc
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+if [[ "${@}" == add-bundle* ]];
+  then exec sh add-bundle
+else
+  cp -r /bundle/* /home/developer/bundle/
+  if [ -f /bundle/.vimrc ]; then
+    cp /bundle/\.vimrc /home/developer/bundle/
+    echo 'source /home/developer/bundle/.vimrc' >> /home/developer/.vimrc
+  fi
+  chown developer:developer -R /home/developer/bundle/
+  chmod 775 -R /home/developer/bundle
+  eval vim $1
 fi
-exec vim "$2"
