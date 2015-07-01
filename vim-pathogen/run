@@ -3,8 +3,8 @@ dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 if [[ "${@}" == add-bundle* ]];
   then exec sh add-bundle
 else
-  if [ -f /bundle/.vimrc ]; then
-    echo 'source /bundle/.vimrc' >> /home/developer/.vimrc
+  if [ -f /.vimrc ]; then
+    echo 'source /.vimrc' >> /home/developer/.vimrc
   fi
   eval vim $1
 fi
