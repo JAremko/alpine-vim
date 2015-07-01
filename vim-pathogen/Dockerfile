@@ -14,9 +14,9 @@ RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
     mkdir /bundle/ && chown developer:developer /bundle/ && \
 #install vim Pathogen
     apk add --update curl && \
-    mkdir -p /home/developer/.vim/autoload /home/developer/bundle /home/developer/preinstalled && \
+    mkdir -p /home/developer/.vim/autoload /bundle /home/developer/preinstalled && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    echo "execute pathogen#infect('/home/developer/bundle/{}', '/home/developer/preinstalled/{}')" \
+    echo "execute pathogen#infect('/bundle/{}', '/home/developer/preinstalled/{}')" \
        >> /home/developer/.vimrc && \
     echo "syntax on " >> /home/developer/.vimrc && \
     echo "filetype plugin indent on " >> /home/developer/.vimrc && \
