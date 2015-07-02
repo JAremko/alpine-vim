@@ -16,5 +16,5 @@ docker commit my-vim my/vim-pathogen
 *Then you can edit a file in the Vim:*
 
 ```
-docker run -ti --rm -v <***/workspace>:/home/developer/workspace my/vim-pathogen ./my-doc
+docker run -ti --rm -v <***/workspace>:/home/developer/workspace my/vim-pathogen ./mydoc
 ```
