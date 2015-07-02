@@ -27,4 +27,4 @@ RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
 
 USER developer
 WORKDIR /home/developer/workspace
-ENTRYPOINT ["sh", "run"]
+ENTRYPOINT ["sh", "/home/developer/run"]
