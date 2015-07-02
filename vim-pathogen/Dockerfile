@@ -26,5 +26,5 @@ RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
     apk del curl && rm -rf /var/cache/apk/*
 
 USER developer
-WORKDIR /home/developer/
+WORKDIR /home/developer/workspace
 ENTRYPOINT ["sh", "run"]
