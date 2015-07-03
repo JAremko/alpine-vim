@@ -9,8 +9,7 @@ RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
     addgroup -g 1000 developer && \
     adduser -D -G developer -u 1000 -h /home/developer -s /bin/bash developer && \
     mkdir -p /home/developer/ && chown -R developer:developer /home/developer && \
-    #might be unnecessary
-    echo "%developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER developer
 #make a directory for plugin plugins
 RUN  mkdir /bundle/ && chown developer:developer /bundle/ 
