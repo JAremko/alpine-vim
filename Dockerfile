@@ -3,9 +3,9 @@ FROM jare/alpine-vim:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN mkdir -p /home/developer/  && \
-    apk --update add python git ctags openjdk7 --virtual build-deps python-dev build-base \
+    apk --update add python git ctags --virtual build-deps python-dev build-base \
     make llvm curl cmake libxpm-dev libx11-dev libxt-dev ncurses-dev  && \
-#install Vim pathogen
+#install Vim Pathogen
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
     echo "execute pathogen#infect('/home/developer/bundle/{}')" >> /home/developer/.vimrc && \
@@ -21,8 +21,8 @@ RUN mkdir -p /home/developer/  && \
     apk del build-deps && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
+    
 #Get Vim plugins
-
 RUN cd /home/developer/bundle/ && \
     git clone https://github.com/bling/vim-airline.git . && \
     git clone https://github.com/majutsushi/tagbar.git . && \
@@ -55,6 +55,7 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/garbas/vim-snipmate.git . && \
     git clone https://github.com/honza/vim-snippets.git . && \
     git clone https://github.com/derekwyatt/vim-scala.git .
+
 ENV HOME /home/developer
 ENV TERM xterm-256color
 WORKDIR /home/developer/workspace/
