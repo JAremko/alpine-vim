@@ -3,7 +3,7 @@ FROM jare/alpine-vim:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN mkdir -p /home/developer/  && \
-    apk --update add python git ctags --virtual build-deps python-dev build-base \
+    apk --update add python git ctags --virtual build-deps bash python-dev build-base \
     make llvm curl cmake libxpm-dev libx11-dev libxt-dev ncurses-dev  && \
 #install Vim Pathogen
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
