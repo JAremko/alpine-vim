@@ -2,7 +2,7 @@ FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-# start scirt
+#start scirt
 ADD run add-bundle /home/developer/
 RUN chmod 775 /home/developer/run /home/developer/add-bundle && \
 #add user:group "developer:developer" with home "/home/developer".
