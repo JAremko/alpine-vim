@@ -137,7 +137,6 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-q>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
