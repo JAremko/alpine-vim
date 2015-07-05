@@ -5,6 +5,7 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN mkdir -p /home/developer
 ENV HOME /home/developer
+ENV TERM xterm-256color
 
 #install Vim Pathogen
 RUN apk --update add python git ctags curl && rm -rf /var/cache/apk/* && \ 
@@ -43,24 +44,28 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/derekwyatt/vim-scala.git
 
 #build and install YouCompleteMe
-RUN apk --update add --virtual build-deps go perl bash python-dev build-base \
-    make llvm cmake libxpm-dev libx11-dev libxt-dev ncurses-dev  && \
-    cd /home/developer/bundle && \
-    git clone https://github.com/Valloric/YouCompleteMe.git && \
+RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base \
+#YCM
+    mkdir -p /home/developer/bundle/YouCompleteMe && \
     cd /home/developer/bundle/YouCompleteMe && \
+    git clone https://github.com/Valloric/YouCompleteMe.git . && \
     git submodule update --init --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
-    #cleanup
-    apk del build-deps && \
+#cleanup
+    apk --update del ycm-build-deps  && \
+    apk --update add libsm libice libxt libx11 ncurses libstdc++ && \
     rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/* && \
+    rm -rf /tmp/*
+
 #build the default .vimrc
-    curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
+RUN curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
     curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
     curl -K https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc && \
    #tidy up
     cat /home/developer/.vimrc | sed '/^\s*$/d' | sed '/^"/d' > tmp.vimrc && mv -f tmp.vimrc /home/developer/.vimrc
 
-ENV TERM xterm-256color
+ENV GOROOT $HOME/workspace/goroot
+ENV PATH $PATH:%GOROOT/bin
+ENV GOPATH $HOME/workspace/gopath
 
 WORKDIR /home/developer/workspace/
