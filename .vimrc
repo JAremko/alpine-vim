@@ -103,13 +103,11 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Powerline
+" => Vim-Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-
+let g:airline_powerline_fonts = 1
 " Always show statusline
 set laststatus=2
-
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
@@ -124,10 +122,6 @@ nnoremap <Leader>, :bp<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => color and theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Always show statusline
-set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
 set background=dark
 colorscheme solarized
 set relativenumber
@@ -148,3 +142,4 @@ let g:UltiSnipsEditSplit="vertical"
 " => Set Vim working directory to the current location
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autochdir
+
