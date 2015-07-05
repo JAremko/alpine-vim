@@ -12,7 +12,7 @@ RUN apk --update add python git ctags curl && rm -rf /var/cache/apk/* && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     
 #build and install YouCompleteMe
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base && \
+RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
     mkdir -p /home/developer/bundle/YouCompleteMe && \
     cd /home/developer/bundle/YouCompleteMe && \
     git clone https://github.com/Valloric/YouCompleteMe.git . && \
@@ -56,9 +56,9 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/derekwyatt/vim-scala.git
     
 #build the default .vimrc
-RUN curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
-    curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
-    curl -K https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc && \
+RUN curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
+    curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
+    curl https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc && \
    #tidy up
     cat /home/developer/.vimrc | sed '/^\s*$/d' | sed '/^"/d' > tmp.vimrc && mv -f tmp.vimrc /home/developer/.vimrc
 
