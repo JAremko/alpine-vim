@@ -1,4 +1,3 @@
-
 FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
@@ -13,8 +12,7 @@ RUN apk --update add python git ctags curl && rm -rf /var/cache/apk/* && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     
 #build and install YouCompleteMe
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base \
-#YCM
+RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base && \
     mkdir -p /home/developer/bundle/YouCompleteMe && \
     cd /home/developer/bundle/YouCompleteMe && \
     git clone https://github.com/Valloric/YouCompleteMe.git . && \
