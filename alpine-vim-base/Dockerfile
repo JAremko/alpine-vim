@@ -7,7 +7,7 @@ RUN apk add --update --virtual build-deps python bash python-dev ctags build-bas
     cd /tmp && \
     hg clone https://code.google.com/p/vim/ && \
     cd /tmp/vim && \
-    ./configure --with-features=normal \
+    ./configure --with-features=big \
                 #needed for editing text in languages which have many characters
                 --enable-multibyte \     
                 #python interop needed for some of my plugins
