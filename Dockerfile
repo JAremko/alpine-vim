@@ -10,8 +10,22 @@ ENV TERM xterm-256color
 #install Vim Pathogen
 RUN apk --update add python git ctags curl && rm -rf /var/cache/apk/* && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
-    curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
+    curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     
+#build and install YouCompleteMe
+RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base \
+#YCM
+    mkdir -p /home/developer/bundle/YouCompleteMe && \
+    cd /home/developer/bundle/YouCompleteMe && \
+    git clone https://github.com/Valloric/YouCompleteMe.git . && \
+    git submodule update --init --recursive && \
+    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
+#cleanup
+    apk --update del ycm-build-deps  && \
+    apk --update add libsm libice libxt libx11 ncurses libstdc++ && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
+
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
     git clone https://github.com/bling/vim-airline.git && \
@@ -42,21 +56,7 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/garbas/vim-snipmate.git && \
     git clone https://github.com/honza/vim-snippets.git && \
     git clone https://github.com/derekwyatt/vim-scala.git
-
-#build and install YouCompleteMe
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash python-dev build-base \
-#YCM
-    mkdir -p /home/developer/bundle/YouCompleteMe && \
-    cd /home/developer/bundle/YouCompleteMe && \
-    git clone https://github.com/Valloric/YouCompleteMe.git . && \
-    git submodule update --init --recursive && \
-    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
-#cleanup
-    apk --update del ycm-build-deps  && \
-    apk --update add libsm libice libxt libx11 ncurses libstdc++ && \
-    rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
-
+    
 #build the default .vimrc
 RUN curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
     curl -K https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
