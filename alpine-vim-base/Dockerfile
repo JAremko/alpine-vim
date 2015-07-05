@@ -12,6 +12,7 @@ RUN apk add --update --virtual build-deps python bash python-dev ctags build-bas
                 --enable-multibyte \     
                 #python interop needed for some of my plugins
                 --enable-pythoninterp \
+                --with-python-config-dir=/usr/lib/python2.7/config \
                 --disable-gui \
                 --disable-netbeans \
                 --prefix /usr && \
