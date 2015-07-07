@@ -31,4 +31,5 @@ WIP
 - https://github.com/derekwyatt/vim-scala 
 - https://github.com/Valloric/YouCompleteMe
 
-**.vimrc:** https://github.com/JAremko/alpine-vim/blob/master/.vimrc
+**.vimrc:** 
+https://github.com/JAremko/alpine-vim/blob/master/.vimrc
