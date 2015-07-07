@@ -1,14 +1,14 @@
 WIP
 
 Plugins:
-https://github.com/bling/vim-airlined 
-https://github.com/majutsushi/tagbar 
-https://github.com/vim-scripts/EasyGrep 
-https://github.com/jlanzarotta/bufexplorer 
-https://github.com/kien/ctrlp.vim 
-https://github.com/scrooloose/nerdtree  
-https://github.com/jistr/vim-nerdtree-tabs 
-https://github.com/scrooloose/syntastic 
+https://github.com/bling/vim-airlined \n
+https://github.com/majutsushi/tagbar \n
+https://github.com/vim-scripts/EasyGrep \n
+https://github.com/jlanzarotta/bufexplorer \n
+https://github.com/kien/ctrlp.vim \n
+https://github.com/scrooloose/nerdtree  \n
+https://github.com/jistr/vim-nerdtree-tabs \n
+https://github.com/scrooloose/syntastic \n
 https://github.com/tomtom/tlib_vim 
 https://github.com/marcweber/vim-addon-mw-utils 
 https://github.com/altercation/vim-colors-solarized 
