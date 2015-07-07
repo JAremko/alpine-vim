@@ -30,3 +30,5 @@ WIP
 - https://github.com/honza/vim-snippets 
 - https://github.com/derekwyatt/vim-scala 
 - https://github.com/Valloric/YouCompleteMe
+
+**.vimrc:** https://github.com/JAremko/alpine-vim/blob/master/.vimrc
