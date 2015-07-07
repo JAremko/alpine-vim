@@ -1,6 +1,6 @@
 WIP
 
-Plugins:
+**Plugins:**
 - https://github.com/bling/vim-airlined 
 - https://github.com/majutsushi/tagbar 
 - https://github.com/vim-scripts/EasyGrep 
