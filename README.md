@@ -29,3 +29,4 @@ WIP
 - https://github.com/garbas/vim-snipmate 
 - https://github.com/honza/vim-snippets 
 - https://github.com/derekwyatt/vim-scala 
+- https://github.com/Valloric/YouCompleteMe
