@@ -2,27 +2,16 @@ FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN mkdir -p /home/developer
+RUN mkdir -p /home/developer /util
 ENV HOME /home/developer
-ENV TERM xterm-256color
+ENV TERM=xterm-256color
+ADD ocd-clean tidy-viml /util/
 
 #install Vim Pathogen
-RUN apk --update add python git ctags curl && rm -rf /var/cache/apk/* && \ 
+RUN apk --update add python git ncurses-terminfo curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
-    curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    
-#build and install YouCompleteMe
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
-    mkdir -p /home/developer/bundle/YouCompleteMe && \
-    cd /home/developer/bundle/YouCompleteMe && \
-    git clone https://github.com/Valloric/YouCompleteMe.git . && \
-    git submodule update --init --recursive && \
-    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
-#cleanup
-    apk --update del ycm-build-deps  && \
-    apk --update add libsm libice libxt libx11 ncurses libstdc++ && \
-    rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
+    curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
+    sh /util/ocd-clean
 
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
@@ -53,17 +42,33 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/tpope/vim-haml.git && \
     git clone https://github.com/garbas/vim-snipmate.git && \
     git clone https://github.com/honza/vim-snippets.git && \
-    git clone https://github.com/derekwyatt/vim-scala.git
-    
+    git clone https://github.com/derekwyatt/vim-scala.git && \
+    sh /util/ocd-clean
+
+#build and install YouCompleteMe
+RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
+    mkdir -p /home/developer/bundle/YouCompleteMe && \
+    cd /home/developer/bundle/YouCompleteMe && \
+    git clone https://github.com/Valloric/YouCompleteMe.git . && \
+    git submodule update --init --recursive && \
+    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
+    #cleanup
+    apk --update del ycm-build-deps  && \
+    apk --update add libxt libx11 libstdc++ && \
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
+      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes && \
+    find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
+    sh /util/ocd-clean
+
 #build the default .vimrc
-RUN curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
-    curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
-    curl https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc && \
-   #tidy up
-    cat /home/developer/.vimrc | sed '/^\s*$/d' | sed '/^"/d' > tmp.vimrc && mv -f tmp.vimrc /home/developer/.vimrc
+RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
+     curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
+     curl https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc
+
+RUN  sh /home/developer/tidy-viml /home/developer/.vimrc
 
 ENV GOROOT $HOME/workspace/goroot
 ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
-
+ENV TERM xterm-256color
 WORKDIR /home/developer/workspace/
