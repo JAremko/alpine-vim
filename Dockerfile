@@ -2,8 +2,6 @@ FROM jare/alpine-vim-ycm:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN mkdir -p /home/developer
-ENV HOME /home/developer
 ENV TERM=xterm-256color
 COPY .vimrc /home/developer/my.vimrc
 
@@ -42,9 +40,10 @@ RUN cd /home/developer/bundle/ && \
     sh /util/ocd-clean /home/developer/bundle/
 
 #build the default .vimrc
-RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
+RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
-     cat  /home/developer/my.vimrc >> /home/developer/.vimrc && rm /home/developer/my.vimrc && \
+     cat  /home/developer/my.vimrc >> /home/developer/.vimrc && \
+     rm /home/developer/my.vimrc && \
      sh /util/tidy-viml /home/developer/.vimrc
 
 #If required golang expected to be installed into the workspace folder.
