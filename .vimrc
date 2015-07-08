@@ -9,7 +9,6 @@
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
-execute pathogen#infect('/home/developer/bundle/{}')
 syntax on
 filetype plugin indent on
 call pathogen#helptags()
@@ -142,4 +141,3 @@ let g:UltiSnipsEditSplit="vertical"
 " => Set Vim working directory to the current location
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autochdir
-
