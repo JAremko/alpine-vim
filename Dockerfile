@@ -50,7 +50,7 @@ RUN cd /home/developer/bundle/ && \
 RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
     mkdir -p /home/developer/bundle/YouCompleteMe && \
     cd /home/developer/bundle/YouCompleteMe && \
-    git clone https://github.com/Valloric/YouCompleteMe.git . && \
+    git clone https://github.com/Valloric/YouCompleteMe.git && \
     git submodule update --init --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
     #cleanup
