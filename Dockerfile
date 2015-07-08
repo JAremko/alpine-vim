@@ -48,9 +48,8 @@ RUN cd /home/developer/bundle/ && \
 
 #build and install YouCompleteMe
 RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
-    mkdir -p /home/developer/bundle/YouCompleteMe && \
+    git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/ && \
     cd /home/developer/bundle/YouCompleteMe && \
-    git clone https://github.com/Valloric/YouCompleteMe && \
     git submodule update --init --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
     #cleanup
