@@ -64,7 +64,7 @@ RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev
 RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc && rm /home/developer/my.vimrc && \
-     sh /home/developer/tidy-viml /home/developer/.vimrc
+     sh /util/tidy-viml /home/developer/.vimrc
 
 ENV GOROOT $HOME/workspace/goroot
 ENV PATH $PATH:%GOROOT/bin
