@@ -12,7 +12,7 @@ COPY .vimrc /home/developer/my.vimrc
 RUN apk --update add python git ncurses-terminfo curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    sh /util/ocd-clean
+    sh /util/ocd-clean /usr/share/
 
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
@@ -44,7 +44,7 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/garbas/vim-snipmate.git && \
     git clone https://github.com/honza/vim-snippets.git && \
     git clone https://github.com/derekwyatt/vim-scala.git && \
-    sh /util/ocd-clean
+    sh /util/ocd-clean /home/developer/bundle/
 
 #build and install YouCompleteMe
 RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
@@ -58,7 +58,7 @@ RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes && \
     find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
-    sh /util/ocd-clean
+    sh /util/ocd-clean /
 
 #build the default .vimrc
 RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
