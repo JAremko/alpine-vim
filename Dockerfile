@@ -9,7 +9,7 @@ ADD ocd-clean tidy-viml /util/
 COPY .vimrc /home/developer/my.vimrc
 
 #install Vim Pathogen
-RUN apk --update add python git ncurses-terminfo curl && \ 
+RUN apk --update add python git ctags ncurses-terminfo curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
     sh /util/ocd-clean /usr/share/
