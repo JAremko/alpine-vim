@@ -7,6 +7,8 @@ ENV HOME /home/developer
 ENV TERM=xterm-256color
 COPY .vimrc /home/developer/my.vimrc
 
+RUN apk --update add curl ctags ncurses-terminfo && sh /util/ocd-clean /usr/share/
+    
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
     git clone https://github.com/bling/vim-airline.git && \
