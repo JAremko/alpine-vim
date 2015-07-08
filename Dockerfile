@@ -6,6 +6,7 @@ RUN mkdir -p /home/developer /util
 ENV HOME /home/developer
 ENV TERM=xterm-256color
 ADD ocd-clean tidy-viml /util/
+COPY .vimrc /home/developer/my.vimrc
 
 #install Vim Pathogen
 RUN apk --update add python git ncurses-terminfo curl && \ 
@@ -61,11 +62,10 @@ RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev
     sh /util/ocd-clean
 
 #build the default .vimrc
-RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
+RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
-     curl https://raw.githubusercontent.com/JAremko/alpine-vim/master/.vimrc >> /home/developer/.vimrc
-
-RUN  sh /home/developer/tidy-viml /home/developer/.vimrc
+     cat  /home/developer/my.vimrc >> /home/developer/.vimrc && rm /home/developer/my.vimrc && \
+     sh /home/developer/tidy-viml /home/developer/.vimrc
 
 ENV GOROOT $HOME/workspace/goroot
 ENV PATH $PATH:%GOROOT/bin
