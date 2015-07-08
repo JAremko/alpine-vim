@@ -18,6 +18,5 @@ docker commit my-vim my/vim-pathogen
 ```
 docker run -ti --rm -v <***/workspace>:/home/developer/workspace my/vim-pathogen ./mydoc
 ```
-*But why???*
 
-I think it might be helpful in fiddling with plugins and settings. 
+*You can use it to test plugin setting and compatibility or make your own bundle.*
