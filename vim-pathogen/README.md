@@ -13,7 +13,7 @@ docker run -ti --name my-vim -v <***/bundle>:/bundle  -v <***/.vimrc>:/.vimrc ja
 docker commit my-vim my/vim-pathogen
 ```
 
-*Then you can edit a file in the Vim:*
+*Then you can edit a file:*
 
 ```
 docker run -ti --rm -v <***/workspace>:/home/developer/workspace my/vim-pathogen ./mydoc
