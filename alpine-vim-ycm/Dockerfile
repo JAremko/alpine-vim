@@ -2,6 +2,9 @@ FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
+RUN mkdir -p /home/developer
+ENV HOME /home/developer
+
 ADD ocd-clean tidy-viml /util/
 
 #install Vim Pathogen
@@ -22,4 +25,7 @@ RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes && \
     find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
-    sh /util/ocd-clean /
+    sh /util/ocd-clean / && \
+    echo "execute pathogen#infect('/home/developer/bundle/{}')" > /home/developer/.vimrc
+    
+WORKDIR /home/developer/workspace/
