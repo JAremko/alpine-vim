@@ -1,5 +1,0 @@
-#!/bin/bash
-find / \( -name ".txt" -o -name "doc" -o -name "docs" -o -name "*.ico" -o -name "*.jpg" \
-       -o -name "*.jpeg" -o -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name ".gitignore" \
-       -o -name ".git" -o -name ".gitattributes" -o -name "*README*" -o -name "*example*" \
-       -o -name "*.png" -o -name "*.gif" -o -name "test" -o -name "*.sh" \) -exec rm -rf {} \;
