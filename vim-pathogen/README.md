@@ -1,4 +1,4 @@
-**Tiny Vim image made to support persistent and swappable plugins and workspaces.**
+**lean and mean Vim image made to support persistent and swappable plugins and workspaces.**
 
 *How to start Vim with your plugins and ".vimrc" file:*
 
