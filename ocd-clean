@@ -1,5 +1,5 @@
 #!/bin/bash
 rm -rf /var/cache/* /tmp/*
 mkdir -p /var/cache/apk/
-find / \( -type d -name "doc" -o -type d -name "docs" -o -type d -name ".gitignore" -o -type d -name ".git" -o -type d -name ".gitattributes" -o -type d -name "*example*" -o -type d -name "test" \) -exec rm -rf {} \;
-find / \( -name ".txt" -o -name "*.ico" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*README*" -o -name "*example*" -o -name "*.png" -o -name "*.gif" -o -name "*.sh" \) -exec rm -rf {} \;
+find $1 \( -type d -name "doc" -o -type d -name "docs" -o -type d -name ".gitignore" -o -type d -name ".git" -o -type d -name ".gitattributes" -o -type d -name "*example*" -o -type d -name "test" \) -exec rm -rf {} \;
+find $1 \( -name ".txt" -o -name "*.ico" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.h" -o -name "*.cpp" -o -name "*.c" -o -name "*README*" -o -name "*example*" -o -name "*.png" -o -name "*.gif" -o -name "*.sh" \) -exec rm -rf {} \;
