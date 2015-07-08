@@ -11,7 +11,7 @@ ENV HOME /home/developer
 RUN apk --update add python git curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    apk --update del curl && \
+    apk --update del curl
     #sh /util/ocd-clean /usr/share/
 
 #build and install YouCompleteMe
