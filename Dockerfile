@@ -1,18 +1,11 @@
-FROM jare/alpine-vim:latest
+FROM jare/alpine-vim-ycm:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN mkdir -p /home/developer /util
+RUN mkdir -p /home/developer
 ENV HOME /home/developer
 ENV TERM=xterm-256color
-ADD ocd-clean tidy-viml /util/
 COPY .vimrc /home/developer/my.vimrc
-
-#install Vim Pathogen
-RUN apk --update add python git ctags ncurses-terminfo curl && \ 
-    mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
-    curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    sh /util/ocd-clean /usr/share/
 
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
@@ -46,28 +39,16 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/derekwyatt/vim-scala.git && \
     sh /util/ocd-clean /home/developer/bundle/
 
-#build and install YouCompleteMe
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
-    git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
-    cd /home/developer/bundle/YouCompleteMe && \
-    git submodule update --init --recursive && \
-    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
-    #cleanup
-    apk --update del ycm-build-deps  && \
-    apk --update add libxt libx11 libstdc++ && \
-    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
-      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes && \
-    find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
-    sh /util/ocd-clean /
-
 #build the default .vimrc
 RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc && rm /home/developer/my.vimrc && \
+     rm /home/developer/my.vimrc && \
      sh /util/tidy-viml /home/developer/.vimrc
 
+#If required golang expected to be installed into the workspace folder.
 ENV GOROOT $HOME/workspace/goroot
 ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
-ENV TERM xterm-256color
+
 WORKDIR /home/developer/workspace/
