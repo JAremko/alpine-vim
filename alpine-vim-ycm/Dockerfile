@@ -2,7 +2,7 @@ FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN mkdir -p /home/developer
+RUN mkdir -p /home/developer/bundle
 ENV HOME /home/developer
 
 ADD ocd-clean tidy-viml /util/
