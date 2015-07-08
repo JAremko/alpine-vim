@@ -5,10 +5,10 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 ADD ocd-clean tidy-viml /util/
 
 #install Vim Pathogen
-RUN apk --update add python git ctags ncurses-terminfo curl && \ 
+RUN apk --update add python git curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-    sh /util/ocd-clean /usr/share/
+    apk --update del curl && sh /util/ocd-clean /usr/share/
 
 #build and install YouCompleteMe
 RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base && \
