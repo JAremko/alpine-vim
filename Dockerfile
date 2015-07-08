@@ -43,7 +43,6 @@ RUN cd /home/developer/bundle/ && \
 RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc && rm /home/developer/my.vimrc && \
-     rm /home/developer/my.vimrc && \
      sh /util/tidy-viml /home/developer/.vimrc
 
 #If required golang expected to be installed into the workspace folder.
