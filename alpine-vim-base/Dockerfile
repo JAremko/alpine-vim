@@ -29,7 +29,6 @@ RUN apk add --update --virtual build-deps python bash python-dev ctags build-bas
     cd /usr/share/vim/vim74/ && \ 
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim && \
     find . -name *.txt | while read line; do rm "$line"; done && \
-    find '/usr/share/vim/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; && \
     sh /util/ocd-clean /
 
 ENTRYPOINT ["vim"]
