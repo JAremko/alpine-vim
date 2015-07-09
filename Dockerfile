@@ -37,8 +37,9 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/garbas/vim-snipmate.git && \
     git clone https://github.com/honza/vim-snippets.git && \
     git clone https://github.com/derekwyatt/vim-scala.git && \
-    sh /util/ocd-clean /home/developer/bundle/
-
+    sh /util/ocd-clean /home/developer/bundle/ && \
+    find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
+    
 #build the default .vimrc
 RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
