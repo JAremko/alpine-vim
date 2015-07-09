@@ -19,4 +19,4 @@ docker commit my-vim my/vim-pathogen
 docker run -ti --rm -v <***/workspace>:/home/developer/workspace my/vim-pathogen ./mydoc
 ```
 **But why???**  
-*It helps progressively add and test new plugins and setting with versioning.*
+*This image can help progressively add and test new plugins and setting with versioning.*
