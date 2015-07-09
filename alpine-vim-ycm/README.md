@@ -1,3 +1,3 @@
-**Vim image with Pathogen, Git and the YouCompleteMe plugin.**
+**Vim image with Pathogen and YouCompleteMe plugins.**
 --------------------------------------------
 *Compiled and optimized for the Golang completion - some unnecessary files removed.*
