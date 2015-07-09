@@ -5,8 +5,6 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 RUN mkdir -p /home/developer/bundle
 ENV HOME /home/developer
 
-ADD ocd-clean tidy-viml /util/
-
 #install Vim Pathogen
 RUN apk --update add python git curl && \ 
     mkdir -p /home/developer/.vim/autoload /home/developer/bundle && \
