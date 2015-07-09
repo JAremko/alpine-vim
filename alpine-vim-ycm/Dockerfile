@@ -22,8 +22,8 @@ RUN apk --update add python git curl && \
     apk --update add libxt libx11 libstdc++ && \
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes && \
-    find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
-    echo "execute pathogen#infect('/home/developer/bundle/{}')" > /home/developer/.vimrc && \
+    #find / -type f -name "*.vim" -exec sh /util/tidy-viml {} \; && \
+    echo "execute pathogen#infect('/home/developer/bundle/{}')" > /home/developer/.vimrc
     #sh /util/ocd-clean \/
     
 WORKDIR /home/developer/workspace/
