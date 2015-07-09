@@ -17,7 +17,7 @@ RUN apk --update add python git curl && \
     cd /home/developer/bundle/YouCompleteMe && \
     git submodule update --init --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
-    #cleanup
+#cleanup
     apk --update del ycm-build-deps curl git && \
     apk --update add libxt libx11 libstdc++ && \
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
