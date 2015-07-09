@@ -2,6 +2,8 @@ FROM alpine:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
+ADD ocd-clean tidy-viml /util/
+
 RUN apk add --update --virtual build-deps python bash python-dev ctags build-base \
       make mercurial libxpm-dev libx11-dev libxt-dev ncurses-dev git && \
     cd /tmp && \
@@ -26,6 +28,8 @@ RUN apk add --update --virtual build-deps python bash python-dev ctags build-bas
     mkdir /var/cache/apk && \
     cd /usr/share/vim/vim74/ && \ 
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim && \
-    find . -name *.txt | while read line; do rm "$line"; done
+    find . -name *.txt | while read line; do rm "$line"; done && \
+    find '/usr/share/vim/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; && \
+    sh /util/ocd-clean /
 
 ENTRYPOINT ["vim"]
