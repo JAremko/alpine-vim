@@ -1,4 +1,4 @@
-FROM jare/alpine-vim:latest
+FROM jare/alpine-vim:nopy
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
