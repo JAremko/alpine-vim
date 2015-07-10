@@ -58,6 +58,6 @@ edit some.file
 
 * For Golang support you need to symlink goroot and gopath in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_groot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=<container_groot> -e GOPATH=<container_gopath>`
 
-* If you have problem with colors switch your terminal to the `solarized dark` and make sure that it uses default palette and  256 colors.
+* If you have problem with colors switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
 
 **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. But mail me if something doesn't work:  <w3techplaygound@gmail.com>**
