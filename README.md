@@ -49,4 +49,6 @@ edit some.file
 
 **.vimrc**  
 ------------------------------------------------------------------------
-<https://github.com/JAremko/alpine-vim/blob/master/.vimrc>
+<https://github.com/JAremko/alpine-vim/blob/master/.vimrc>    
+
+**Mail me if something doesn't work:  <w3techplaygound@gmail.com>**
