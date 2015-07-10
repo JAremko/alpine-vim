@@ -47,11 +47,11 @@ edit some.file
 28. <https://github.com/derekwyatt/vim-scala>   
 29. <https://github.com/Valloric/YouCompleteMe>  
 
-**.vimrc**  
+**[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)** 
 ------------------------------------------------------------------------
-<https://github.com/JAremko/alpine-vim/blob/master/.vimrc>    
+    
 
-*If you don't need YouCompleteMe, Python and "big" features use* `jare/vim-bundle:no-ycm` *instead. It's one-third the size of this image.*
+If you don't need YouCompleteMe, Python and "big" features use `jare/vim-bundle:no-ycm` instead. It's one-third the size of this image.
 
 * To see fancy arrows you need [Powerline Fonts](http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin) on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the
 [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
