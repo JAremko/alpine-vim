@@ -51,4 +51,4 @@ edit some.file
 ------------------------------------------------------------------------
 <https://github.com/JAremko/alpine-vim/blob/master/.vimrc>    
 
-**Mail me if something doesn't work:  <w3techplaygound@gmail.com>**
+**I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. But mail me if something doesn't work:  <w3techplaygound@gmail.com>**
