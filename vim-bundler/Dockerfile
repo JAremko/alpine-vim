@@ -14,6 +14,5 @@ RUN apk add --update curl && \
     echo "filetype plugin indent on " >> /home/developer/.vimrc && \
     #cleanup
     apk del curl && rm -rf /var/cache/apk/* /tmp/*
-ENV HOME /home/developer
 WORKDIR /home/developer/workspace
 ENTRYPOINT ["sh", "/home/developer/run"]
