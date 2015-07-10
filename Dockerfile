@@ -1,4 +1,3 @@
-#Use "jare/alpine-vim-pathogen:latest" if you don't need YouCompleteMe
 FROM jare/alpine-vim-ycm:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
