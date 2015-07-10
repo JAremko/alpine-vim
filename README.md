@@ -1,9 +1,11 @@
-The best way to use:
-Make an alias:
+The best way to use:  
+--------------------
+
+Make an alias:  
 ```
 alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/alpine-vim-ycm"
 ```
-Have fun!
+Have fun!  
 ```
 edit some.file
 ```
