@@ -9,5 +9,6 @@ RUN apk --update add curl && \
     echo "execute pathogen#infect('/home/developer/bundle/{}')" \
       > /home/developer/.vimrc && \
     echo "syntax on " >> /home/developer/.vimrc && \
-    echo "filetype plugin indent on " >> /home/developer/.vimrc && \
+    echo "filetype plugin indent on " >> /home/developer/.vimrc
+    
 ENV HOME /home/developer
