@@ -4,7 +4,6 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN mkdir -p /home/developer/bundle
 
-#install Vim Pathogen
 RUN apk --update add python --virtual ycm-build-deps git go llvm perl bash cmake python-dev build-base && \
     git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
     cd /home/developer/bundle/YouCompleteMe && \
