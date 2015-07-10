@@ -42,10 +42,10 @@ edit some.file
 23. <https://github.com/vim-scripts/mru.vim>   
 24. <https://github.com/vim-scripts/YankRing.vim>   
 25. <https://github.com/tpope/vim-haml>   
-26. <https://github.com/garbas/vim-snipmate   
-27. <https://github.com/honza/vim-snippets   
-28. <https://github.com/derekwyatt/vim-scala   
-29. <https://github.com/Valloric/YouCompleteMe  
+26. <https://github.com/garbas/vim-snipmate>   
+27. <https://github.com/honza/vim-snippets>   
+28. <https://github.com/derekwyatt/vim-scala>   
+29. <https://github.com/Valloric/YouCompleteMe>  
 
 **.vimrc**  
 ------------------------------------------------------------------------
