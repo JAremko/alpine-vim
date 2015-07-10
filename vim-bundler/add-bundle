@@ -1,0 +1,9 @@
+#!/bin/bash
+cp -r /bundle/* /home/developer/preinstalled/
+if [ -f /.vimrc ]; then
+  md5="$(md5sum '/.vimrc')"
+  md5="${md5%% *}" # remove the first space and everything after it
+  echo "source /home/developer/preinstalled/${md5}.vimrc" >> /home/developer/.vimrc
+  cp '/.vimrc' /home/developer/preinstalled/${md5}\.vimrc
+fi
+echo "bundle added"
