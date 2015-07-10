@@ -135,9 +135,3 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Set Vim working directory to the current location
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autochdir
