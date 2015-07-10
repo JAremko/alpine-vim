@@ -11,9 +11,6 @@ edit some.file
 ```
 [How to use docker without sudo](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo)
 
-
-
-
 **Plugins**  
 ------------
 1. https://github.com/bling/vim-airlined   
