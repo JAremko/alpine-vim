@@ -51,7 +51,7 @@ edit some.file
 ------------------------------------------------------------------------
 <https://github.com/JAremko/alpine-vim/blob/master/.vimrc>    
 
-* To see fancy arrows you need [Powerline Fonts](http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin) on your machine. If you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc) 
+* To see fancy arrows you need [Powerline Fonts](http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin) on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc) 
 * For Golang support you need to symlink goroot and gopath in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_groot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=container_groot -e GOPATH=<local_gopath>`
 
 **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. But mail me if something doesn't work:  <w3techplaygound@gmail.com>**
