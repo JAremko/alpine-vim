@@ -2,13 +2,17 @@ The best way to use:
 --------------------
 
 Make an alias:  
+
 ```
-alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/alpine-vim-ycm"
+alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle"
 ```
+
 Have fun!  
+
 ```
 edit some.file
 ```
+
 *[How to use docker without sudo](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo)*
 
 **Plugins**  
