@@ -1,1 +1,1 @@
-Alpine based Vim with Pathogen installed.
+Alpine based Vim with Pathogen.
