@@ -63,7 +63,7 @@ Keep in mind:
 
 * For Golang support you need to symlink goroot and gopath in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_groot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=<container_groot> -e GOPATH=<container_gopath>`
 
-* If you have problem with colors switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
+* If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
 
 * If your terminal doesn't support 256 colors change `TERM` environment variable. For example `docker run .. -e TERM=xterm ...` and lines `set t_Co=256` and
 `set term=xterm-256color` in the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)  accordingly.
