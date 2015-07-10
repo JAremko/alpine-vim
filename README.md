@@ -1,5 +1,13 @@
-WIP
-
+The best way to use:
+1. Make an alias:
+```
+alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/alpine-vim-ycm"
+```
+2. Have fun!
+```
+edit some.file
+```
+------------
 **Plugins**  
 ------------
 1. https://github.com/bling/vim-airlined   
@@ -35,6 +43,3 @@ WIP
 .vimrc  
 ------------------------------------------------------------------------
 https://github.com/JAremko/alpine-vim/blob/master/.vimrc
-
-
-
