@@ -1,4 +1,4 @@
-The best way to use:  
+**The best way to use:**  
 --------------------
 
 Make an alias:  
@@ -47,6 +47,6 @@ edit some.file
 28. https://github.com/derekwyatt/vim-scala   
 29. https://github.com/Valloric/YouCompleteMe  
 
-.vimrc  
+**.vimrc**  
 ------------------------------------------------------------------------
 https://github.com/JAremko/alpine-vim/blob/master/.vimrc
