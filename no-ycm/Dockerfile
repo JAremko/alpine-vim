@@ -1,143 +1,55 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Huge thanks to "Amir Salihefendic" : https://github.com/amix
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+FROM jare/vim-pathogen:nopy
 
+MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-" It will be prefixed by  https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
+ENV TERM=xterm-256color
+COPY .vimrc /home/developer/my.vimrc
 
+RUN apk --update add curl ctags git ncurses-terminfo && sh /util/ocd-clean /usr/share/
+    
+#Get Vim plugins
+RUN cd /home/developer/bundle/ && \
+    git clone https://github.com/bling/vim-airline.git && \
+    git clone https://github.com/majutsushi/tagbar.git && \
+    git clone https://github.com/vim-scripts/EasyGrep.git && \
+    git clone https://github.com/jlanzarotta/bufexplorer.git && \
+    git clone https://github.com/kien/ctrlp.vim.git && \
+    git clone https://github.com/scrooloose/nerdtree.git && \ 
+    git clone https://github.com/jistr/vim-nerdtree-tabs.git && \
+    git clone https://github.com/scrooloose/syntastic.git && \
+    git clone https://github.com/tomtom/tlib_vim.git && \
+    git clone https://github.com/marcweber/vim-addon-mw-utils.git && \
+    git clone https://github.com/altercation/vim-colors-solarized.git && \
+    git clone https://github.com/vim-scripts/taglist.vim.git && \
+    git clone https://github.com/tpope/vim-commentary.git && \
+    git clone https://github.com/terryma/vim-expand-region.git && \
+    git clone https://github.com/tpope/vim-fugitive.git && \
+    git clone https://github.com/airblade/vim-gitgutter.git && \
+    git clone https://github.com/fatih/vim-go.git && \
+    git clone https://github.com/plasticboy/vim-markdown.git && \
+    git clone https://github.com/michaeljsmith/vim-indent-object.git && \
+    git clone https://github.com/terryma/vim-multiple-cursors.git && \
+    git clone https://github.com/tpope/vim-repeat.git && \
+    git clone https://github.com/tpope/vim-surround.git && \
+    git clone https://github.com/vim-scripts/mru.vim.git && \
+    git clone https://github.com/vim-scripts/YankRing.vim.git && \
+    git clone https://github.com/tpope/vim-haml.git && \
+    git clone https://github.com/garbas/vim-snipmate.git && \
+    git clone https://github.com/honza/vim-snippets.git && \
+    git clone https://github.com/derekwyatt/vim-scala.git && \
+    sh /util/ocd-clean /home/developer/bundle/ && \
+    find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
+    
+#build the default .vimrc
+RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
+     curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
+     cat  /home/developer/my.vimrc >> /home/developer/.vimrc && \
+     rm /home/developer/my.vimrc && \
+     sh /util/tidy-viml /home/developer/.vimrc
 
-""""""""""""""""""""""""""""""
-" => Load pathogen paths
-""""""""""""""""""""""""""""""
-syntax on
-filetype plugin indent on
-call pathogen#helptags()
+#If required golang expected to be installed into the workspace folder.
+ENV GOROOT $HOME/workspace/goroot
+ENV PATH $PATH:%GOROOT/bin
+ENV GOPATH $HOME/workspace/gopath
 
-
-""""""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
-
-
-""""""""""""""""""""""""""""""
-" => MRU plugin
-""""""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
-
-
-""""""""""""""""""""""""""""""
-" => CTRL-P
-""""""""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 0
-
-let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
-
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
-
-
-""""""""""""""""""""""""""""""
-" => snipMate (beside <TAB> support <CTRL-j>)
-""""""""""""""""""""""""""""""
-ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
-snor <c-j> <esc>i<right><c-r>=snipMate#TriggerSnippet()<cr>
-
-
-""""""""""""""""""""""""""""""
-" => Vim grep
-""""""""""""""""""""""""""""""
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
-let NERDTreeIgnore = ['\.pyc$']
-let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark 
-map <leader>nf :NERDTreeFind<cr>
-let NERDTreeShowHidden=1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree Tabs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:nerdtree_tabs_open_on_console_startup=1
-nmap <F8> :TagbarToggle<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-multiple-cursors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key="\<C-s>"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => surround.vim config
-" Annotate strings with gettext http://amix.dk/blog/post/19678
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-Airline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-" Always show statusline
-set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
-set term=xterm-256color
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ???
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>. :bn<CR>
-nnoremap <Leader>, :bp<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => color and theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme solarized
-set relativenumber
-set number
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Snippets
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-q>"
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Set Vim working directory to the current location
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autochdir
+WORKDIR /home/developer/workspace/
