@@ -3,7 +3,7 @@ FROM jare/alpine-vim:nopy
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN apk --update add curl && \
-    mkdir -p /home/developer /home/developer/.vim/autoload && \
+    mkdir -p /home/developer/bundle /home/developer/.vim/autoload && \
     curl -LSso /home/developer/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
     apk del curl && rm -rf /var/cache/apk/* /tmp/* && \
     echo "execute pathogen#infect('/home/developer/bundle/{}')" \
