@@ -1,4 +1,4 @@
-FROM jare/alpine-vim:latest
+FROM jare/vim-pathogen:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
