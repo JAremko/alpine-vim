@@ -1,3 +1,5 @@
+*Baided on ["The Ultimate vimrc"](https://github.com/amix/vimrc)*
+
 **The best way to use:**  
 --------------------
 
@@ -68,4 +70,4 @@ Keep in mind:
 * If your terminal doesn't support 256 colors change `TERM` environment variable. For example `docker run .. -e TERM=xterm ...` and lines `set t_Co=256` and
 `set term=xterm-256color` in the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)  accordingly.
 
-**I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. But mail me if something doesn't work:  <w3techplaygound@gmail.com>**
+**I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you noticed a bug.
