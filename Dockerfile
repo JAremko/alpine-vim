@@ -58,4 +58,4 @@ ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
 
 WORKDIR /home/developer/workspace/
-ENTRYPOINT ["run"]
+ENTRYPOINT ["sh", "run"]
