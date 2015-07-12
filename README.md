@@ -85,7 +85,7 @@ Keep in mind:
 
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
 
-* For Golang support you need to symlink goroot and gopath in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_groot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=<container_groot> -e GOPATH=<container_gopath>`
+* For Golang you need to symlink `goroot` and `gopath` in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_goroot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=<container_goroot> -e GOPATH=<container_gopath>`
 
 * If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
 
