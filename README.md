@@ -15,7 +15,19 @@ Have fun!
 edit some.file
 ```
 
-*[How to use docker without sudo](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo)*
+**How to disable some plugins:**  
+--------------------------------
+
+```
+docker run ... DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle
+```
+
+**If your terminal doesn't support 256 colors change `TERM` environment variable**
+---------------------------------------------------------------------------------
+
+```
+docker run ... -e TERM=xterm ... jare/vim-bundle
+```
 
 **Plugins**  
 ------------
@@ -66,7 +78,5 @@ Keep in mind:
 * For Golang support you need to symlink goroot and gopath in to the root of the workspace. Or mount them with `-v <local_goroot>:<container_groot> -v <local_gopath>:<container_gopath>` and set environment variables `-e GOROOT=<container_groot> -e GOPATH=<container_gopath>`
 
 * If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
-
-* If your terminal doesn't support 256 colors change `TERM` environment variable. For example `docker run .. -e TERM=xterm ...`
 
 **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you noticed a bug.**
