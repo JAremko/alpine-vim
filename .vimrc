@@ -107,9 +107,7 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 let g:airline_powerline_fonts = 1
 " Always show statusline
 set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
-set term=xterm-256color
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ???
