@@ -22,7 +22,7 @@ edit some.file
 docker run ... DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle
 ```
 
-**If your terminal doesn't support 256 colors change `TERM` environment variable**
+**If your terminal doesn't support 256 colors change `TERM` environment variable:**
 ---------------------------------------------------------------------------------
 
 ```
