@@ -29,6 +29,16 @@ docker run ... -e DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle
 docker run ... -e TERM=xterm ... jare/vim-bundle
 ```
 
+**How to add your plugins and .vimrc:**
+---------------------------------------------------------------------------------
+
+1. Create a folder with your `.vimrc` file and, if you want to add plugins, subfolder called `bundle` with them.
+2. mount it:
+
+```
+docker run ... -v ~/my-stuff:/ext/ ... jare/vim-bundle
+```
+
 **Plugins**  
 ------------
 1. [Airline](https://github.com/bling/vim-airline)     
