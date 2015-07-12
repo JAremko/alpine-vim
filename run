@@ -3,6 +3,6 @@ cd /home/developer
 echo "let g:pathogen_disabled = [$DISABLE]" > .vimrc
 echo "execute pathogen#infect('/ext/bundle/{}')" >> .vimrc
 cat .vimrc~ >> .vimrc
-echo "source /ext/.vimrc"
+echo "source /ext/.vimrc" >> .vimrc
 cd /home/developer/workspace/
 vim $@
