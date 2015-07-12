@@ -5,7 +5,7 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 ENV TERM=xterm-256color
 ENV DISABLE=""
 COPY .vimrc /home/developer/my.vimrc
-COPY run /usr/local/bin
+COPY run /usr/local/bin/
 
 RUN apk --update add curl ctags git ncurses-terminfo && sh /util/ocd-clean /usr/share/
     
