@@ -47,7 +47,9 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc~ && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc~ && \
      rm /home/developer/my.vimrc && \
-     sh /util/tidy-viml /home/developer/.vimrc~
+     sh /util/tidy-viml /home/developer/.vimrc~ && \
+#Mount point for a custom .vimrc
+     echo " " > /.vimrc
 
 #If required golang expected to be installed into the workspace folder.
 ENV GOROOT $HOME/workspace/goroot
