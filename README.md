@@ -1,4 +1,4 @@
-*Baided on ["The Ultimate vimrc"](https://github.com/amix/vimrc)*
+*Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)*
 
 **The best way to use:**  
 --------------------
