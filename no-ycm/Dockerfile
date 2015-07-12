@@ -49,8 +49,8 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc~ && \
      rm /home/developer/my.vimrc && \
      sh /util/tidy-viml /home/developer/.vimrc~ && \
-#Mount point for a custom .vimrc
-     echo " " > /.vimrc
+#custom .vimrc stub
+     echo " " > /ext/.vimrc
 
 #If required golang expected to be installed into the workspace folder.
 ENV GOROOT $HOME/workspace/goroot
