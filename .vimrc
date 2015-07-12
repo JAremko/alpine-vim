@@ -139,3 +139,9 @@ let g:UltiSnipsEditSplit="vertical"
 " => Set Vim working directory to the current location
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autochdir
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mount point for a custom .vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source /.vimrc
