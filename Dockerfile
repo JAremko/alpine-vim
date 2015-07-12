@@ -3,6 +3,7 @@ FROM jare/alpine-vim-ycm:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 ENV TERM=xterm-256color
+ENV DISABLE=""
 COPY .vimrc /home/developer/my.vimrc
 COPY run /usr/local/bin
 
