@@ -57,5 +57,4 @@ ENV GOROOT $HOME/workspace/goroot
 ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
 
-WORKDIR /home/developer/workspace/
 ENTRYPOINT ["sh", "/usr/local/bin/run"]
