@@ -4,3 +4,5 @@ Used in:
 - [vim-bundle★](https://registry.hub.docker.com/u/jare/vim-bundle/)
 - [alpine-vim-ycm](https://registry.hub.docker.com/u/jare/alpine-vim-ycm/)
 - [alpine-vim-bundler](https://registry.hub.docker.com/u/jare/alpine-vim-bundler/)
+
+*Use* `jare/vim-pathogen:nopy` *If you don't need Python compatibility and "big" features*
