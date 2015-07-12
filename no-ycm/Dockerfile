@@ -3,7 +3,9 @@ FROM jare/vim-pathogen:nopy
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 ENV TERM=xterm-256color
+ENV DISABLE=""
 COPY .vimrc /home/developer/my.vimrc
+COPY run /usr/local/bin
 
 RUN apk --update add curl ctags git ncurses-terminfo && sh /util/ocd-clean /usr/share/
     
@@ -41,11 +43,14 @@ RUN cd /home/developer/bundle/ && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #build the default .vimrc
-RUN  curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc && \
-     curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc && \
-     cat  /home/developer/my.vimrc >> /home/developer/.vimrc && \
+RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ && \
+     curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc~ && \
+     curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc~ && \
+     cat  /home/developer/my.vimrc >> /home/developer/.vimrc~ && \
      rm /home/developer/my.vimrc && \
-     sh /util/tidy-viml /home/developer/.vimrc
+     sh /util/tidy-viml /home/developer/.vimrc~ && \
+#Mount point for a custom .vimrc
+     echo " " > /.vimrc
 
 #If required golang expected to be installed into the workspace folder.
 ENV GOROOT $HOME/workspace/goroot
@@ -53,3 +58,4 @@ ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
 
 WORKDIR /home/developer/workspace/
+ENTRYPOINT ["run"]
