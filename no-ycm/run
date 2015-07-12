@@ -1,0 +1,8 @@
+#!/bin/bash
+cd /home/developer
+echo "let g:pathogen_disabled = [$DISABLE]" > .vimrc
+echo "execute pathogen#infect('/ext-bundle/{}')" >> .vimrc
+cat .vimrc~ >> .vimrc
+
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+vim $@
