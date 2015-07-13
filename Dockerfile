@@ -54,7 +54,6 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ && \
 
 #If required golang expected to be installed into the workspace folder.
 ENV GOROOT $HOME/workspace/goroot
-ENV PATH $PATH:%GOROOT/bin
 ENV GOPATH $HOME/workspace/gopath
 
 ENTRYPOINT ["sh", "/usr/local/bin/run"]
