@@ -52,8 +52,8 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ && \
 #custom .vimrc stub
      mkdir -p /ext/ && echo " " > /ext/.vimrc
 
-#If required golang expected to be installed into the workspace folder.
-ENV GOROOT $HOME/workspace/goroot
-ENV GOPATH $HOME/workspace/gopath
+ENV GOPATH /go/gopath
+ENV GOROOT /go/goroot
+ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
 
 ENTRYPOINT ["sh", "/usr/local/bin/run"]
