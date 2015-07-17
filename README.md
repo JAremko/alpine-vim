@@ -70,7 +70,7 @@ docker run ... -v ~/my-stuff:/ext/ ... jare/vim-bundle
 23. [The Most Recently Used (MRU](https://github.com/vim-scripts/mru.vim)      
 24. [YankRing](https://github.com/vim-scripts/YankRing.vim)      
 25. [Vim-HAML](https://github.com/tpope/vim-haml)       
-26. [SnipMate](https://github.com/garbas/vim-snipmate)       
+26. [UltiSnips](https://github.com/SirVer/ultisnips)       
 27. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets)      
 28. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
 29. [tlib](https://github.com/tomtom/tlib_vim)      
