@@ -67,7 +67,7 @@ docker run ... -v ~/my-stuff:/ext/ ... jare/vim-bundle
 20. [Vim-multiple-cursor](https://github.com/terryma/vim-multiple-cursors)       
 21. [Vim-repeat](https://github.com/tpope/vim-repeat)      
 22. [Vim-surround](https://github.com/tpope/vim-surround)      
-23. [The Most Recently Used (MRU](https://github.com/vim-scripts/mru.vim)      
+23. [The Most Recently Used (MRU)](https://github.com/vim-scripts/mru.vim)      
 24. [YankRing](https://github.com/vim-scripts/YankRing.vim)      
 25. [Vim-HAML](https://github.com/tpope/vim-haml)       
 26. [UltiSnips](https://github.com/SirVer/ultisnips)       
