@@ -36,7 +36,7 @@ RUN cd /home/developer/bundle/ && \
     git clone https://github.com/vim-scripts/mru.vim.git && \
     git clone https://github.com/vim-scripts/YankRing.vim.git && \
     git clone https://github.com/tpope/vim-haml.git && \
-    git clone https://github.com/garbas/vim-snipmate.git && \
+    git clone https://github.com/SirVer/ultisnips.git && \
     git clone https://github.com/honza/vim-snippets.git && \
     git clone https://github.com/derekwyatt/vim-scala.git && \
     sh /util/ocd-clean /home/developer/bundle/ && \
