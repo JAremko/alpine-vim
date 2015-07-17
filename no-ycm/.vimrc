@@ -140,7 +140,6 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-q>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
