@@ -89,7 +89,7 @@ Keep in mind:
 
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
 
-* For full Golang support you need to mount `/go` volume with `goroot` and `gopath`
+* For full Golang support you need to mount `/goroot` volume
 
 * If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
 
