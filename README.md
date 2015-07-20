@@ -89,7 +89,7 @@ Keep in mind:
 
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
 
-* For the full Golang support you need to mount `/goroot` volume. For example, run `jare/go-tools` in the detached (`-d`) mode `docker run -d --name go-tools jare/go-tools` and mount its `/goroot` volume like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle`
+* For the full Golang support you need to mount `/goroot` volume. For example, run `jare/go-tools` in the detached (`-d`) mode `docker run -d --name go-tools jare/go-tools` and mount its volumes like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle`
 
 * If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
 
