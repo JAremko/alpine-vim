@@ -150,6 +150,3 @@ let g:UltiSnipsEditSplit="vertical"
 " => Set Vim working directory to the current location
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autochdir
-
-
-hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
