@@ -144,6 +144,3 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-
-hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
