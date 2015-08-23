@@ -3,7 +3,7 @@ FROM jare/vim-pathogen:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN apk --update add --virtual ycm-build-deps python git go llvm perl bash cmake python-dev build-base && \
-    git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
+    git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
     cd /home/developer/bundle/YouCompleteMe && \
     git submodule update --init --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
