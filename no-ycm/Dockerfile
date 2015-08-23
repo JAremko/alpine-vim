@@ -11,34 +11,34 @@ RUN apk --update add curl ctags git ncurses-terminfo && sh /util/ocd-clean /usr/
     
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
-    git clone https://github.com/bling/vim-airline.git && \
-    git clone https://github.com/majutsushi/tagbar.git && \
-    git clone https://github.com/vim-scripts/EasyGrep.git && \
-    git clone https://github.com/jlanzarotta/bufexplorer.git && \
-    git clone https://github.com/kien/ctrlp.vim.git && \
-    git clone https://github.com/scrooloose/nerdtree.git && \ 
-    git clone https://github.com/jistr/vim-nerdtree-tabs.git && \
-    git clone https://github.com/scrooloose/syntastic.git && \
-    git clone https://github.com/tomtom/tlib_vim.git && \
-    git clone https://github.com/marcweber/vim-addon-mw-utils.git && \
-    git clone https://github.com/altercation/vim-colors-solarized.git && \
-    git clone https://github.com/vim-scripts/taglist.vim.git && \
-    git clone https://github.com/tpope/vim-commentary.git && \
-    git clone https://github.com/terryma/vim-expand-region.git && \
-    git clone https://github.com/tpope/vim-fugitive.git && \
-    git clone https://github.com/airblade/vim-gitgutter.git && \
-    git clone https://github.com/fatih/vim-go.git && \
-    git clone https://github.com/plasticboy/vim-markdown.git && \
-    git clone https://github.com/michaeljsmith/vim-indent-object.git && \
-    git clone https://github.com/terryma/vim-multiple-cursors.git && \
-    git clone https://github.com/tpope/vim-repeat.git && \
-    git clone https://github.com/tpope/vim-surround.git && \
-    git clone https://github.com/vim-scripts/mru.vim.git && \
-    git clone https://github.com/vim-scripts/YankRing.vim.git && \
-    git clone https://github.com/tpope/vim-haml.git && \
-    git clone https://github.com/SirVer/ultisnips.git && \
-    git clone https://github.com/honza/vim-snippets.git && \
-    git clone https://github.com/derekwyatt/vim-scala.git && \
+    git clone --depth 1 https://github.com/bling/vim-airline.git && \
+    git clone --depth 1 https://github.com/majutsushi/tagbar.git && \
+    git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git && \
+    git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git && \
+    git clone --depth 1 https://github.com/kien/ctrlp.vim.git && \
+    git clone --depth 1 https://github.com/scrooloose/nerdtree.git && \ 
+    git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git && \
+    git clone --depth 1 https://github.com/scrooloose/syntastic.git && \
+    git clone --depth 1 https://github.com/tomtom/tlib_vim.git && \
+    git clone --depth 1 https://github.com/marcweber/vim-addon-mw-utils.git && \
+    git clone --depth 1 https://github.com/altercation/vim-colors-solarized.git && \
+    git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git && \
+    git clone --depth 1 https://github.com/tpope/vim-commentary.git && \
+    git clone --depth 1 https://github.com/terryma/vim-expand-region.git && \
+    git clone --depth 1 https://github.com/tpope/vim-fugitive.git && \
+    git clone --depth 1 https://github.com/airblade/vim-gitgutter.git && \
+    git clone --depth 1 https://github.com/fatih/vim-go.git && \
+    git clone --depth 1 https://github.com/plasticboy/vim-markdown.git && \
+    git clone --depth 1 https://github.com/michaeljsmith/vim-indent-object.git && \
+    git clone --depth 1 https://github.com/terryma/vim-multiple-cursors.git && \
+    git clone --depth 1 https://github.com/tpope/vim-repeat.git && \
+    git clone --depth 1 https://github.com/tpope/vim-surround.git && \
+    git clone --depth 1 https://github.com/vim-scripts/mru.vim.git && \
+    git clone --depth 1 https://github.com/vim-scripts/YankRing.vim.git && \
+    git clone --depth 1 https://github.com/tpope/vim-haml.git && \
+    git clone --depth 1 https://github.com/SirVer/ultisnips.git && \
+    git clone --depth 1 https://github.com/honza/vim-snippets.git && \
+    git clone --depth 1 https://github.com/derekwyatt/vim-scala.git && \
     sh /util/ocd-clean /home/developer/bundle/ && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
