@@ -5,7 +5,7 @@
 *Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)*
 
 **The best way to use:**  
---------------------
+
 
 Make an alias:  
 
@@ -20,21 +20,21 @@ edit some.file
 ```
 
 **How to disable some plugins:**  
---------------------------------
+
 
 ```
 docker run ... -e DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle
 ```
 
 **If your terminal doesn't support 256 colors change `TERM` environment variable:**
----------------------------------------------------------------------------------
+
 
 ```
 docker run ... -e TERM=xterm ... jare/vim-bundle
 ```
 
 **How to add your plugins and .vimrc:**
----------------------------------------------------------------------------------
+-
 
 1. Create a folder with your `.vimrc` file and, if you want to add plugins, subfolder called `bundle` with them.
 2. mount it:
@@ -44,7 +44,7 @@ docker run ... -v ~/my-stuff:/ext/ ... jare/vim-bundle
 ```
 
 **Plugins**  
-------------
+
 1. [Airline](https://github.com/bling/vim-airline)     
 2. [Tagbar](https://github.com/majutsushi/tagbar)    
 3. [EasyGrep](https://github.com/vim-scripts/EasyGrep)      
@@ -76,15 +76,15 @@ docker run ... -v ~/my-stuff:/ext/ ... jare/vim-bundle
 29. [tlib](https://github.com/tomtom/tlib_vim)      
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)** 
-------------------------------------------------------------------------
+
     
 
 If you don't need YouCompleteMe, Python and "big" features use `jare/vim-bundle:no-ycm` instead. It's one-third the size of this image.
 
 Keep in mind:
-------------
 
-* To see fancy arrows you need [Powerline Fonts](http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin) on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the
+
+* To see fancy arrows you need [Powerline Fonts](http://goo.gl/gBeVbk) on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the
 [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
 
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
