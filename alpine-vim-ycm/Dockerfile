@@ -5,7 +5,7 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 RUN apk --update add --virtual ycm-build-deps python git go llvm perl bash cmake python-dev build-base && \
     git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
     cd /home/developer/bundle/YouCompleteMe && \
-    git submodule update --init --recursive && \
+    git submodule update --init --depth 100 --recursive && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer && \
 #cleanup
     apk --update del ycm-build-deps && apk --update add python libxt libx11 libstdc++ && \
