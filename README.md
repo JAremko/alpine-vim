@@ -1,10 +1,10 @@
 `jare/vim-bundle:no-ycm`   [![jare/vim-bundle:no-ycm](https://badge.imagelayers.io/jare/vim-bundle:no-ycm.svg)](https://imagelayers.io/?images=jare/vim-bundle:no-ycm 'Get your own badge on imagelayers.io')  
 `jare/vim-bundle:latest`   [![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'Get your own badge on imagelayers.io')   
-##  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)
+####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)
 ###### **The best way to use:**  
-Make an alias:  
+**Make an alias:**  
 `alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle"`
-Have fun!  `edit some.file`
+**Have fun!**  `edit some.file`
 ###### **How to disable some plugins:**  
 `docker run ... -e DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle`
 ###### **How to add your plugins and .vimrc:**
@@ -48,8 +48,7 @@ Have fun!  `edit some.file`
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
 `docker run ... -e TERM=xterm ... jare/vim-bundle`
   - If you don't need YouCompleteMe, Python and "big" features use `jare/vim-bundle:no-ycm` instead. It's one-third the size of this image.
-  - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the
-[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
+  - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
   - For the full Golang support you need to mount `/goroot` volume. For example, run `jare/go-tools` in the detached (`-d`) mode `docker run -d --name go-tools jare/go-tools` and mount its volumes like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle`
   - If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
