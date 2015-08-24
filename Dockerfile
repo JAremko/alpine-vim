@@ -12,6 +12,8 @@ RUN apk --update add curl ctags git ncurses-terminfo && sh /util/ocd-clean /usr/
 #Get Vim plugins
 RUN cd /home/developer/bundle/ && \
     git clone --depth 1 https://github.com/bling/vim-airline.git && \
+    git clone --depth 1 https://github.com/easymotion/vim-easymotion.git && \
+    git clone --depth 1 https://github.com/mbbill/undotree.git && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git && \
     git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git && \
     git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git && \
