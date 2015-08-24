@@ -54,6 +54,9 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
 #custom .vimrc stub
      mkdir -p /ext/ && echo " " > /ext/.vimrc
 
+#sponge alias
+RUN printf  "alias sudo='sudo ' \nalias sp='| sponge '" >> /home/developer/.bash_profile
+
 ENV GOPATH /home/developer/workspace
 ENV GOROOT /goroot
 ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
