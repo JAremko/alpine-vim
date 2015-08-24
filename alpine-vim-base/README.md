@@ -1,7 +1,3 @@
-`alpine-vim:nopy` [![alpine-vim:nopy](https://badge.imagelayers.io/jare/alpine-vim:nopy.svg)](https://imagelayers.io/?images=jare/alpine-vim:nopy 'Get your own badge on imagelayers.io')    
-`alpine-vim:latest` [![alpine-vim:latest](https://badge.imagelayers.io/jare/alpine-vim:latest.svg)](https://imagelayers.io/?images=jare/alpine-vim:latest 'Get your own badge on imagelayers.io')   
-
-
 Vim package from the Alpine repository lacks "pythoninterp"(required for some of my plugins). So I made this base image with a custom Vim build. Also I removed docs, tutorials and other unnecessary parts.
 
 Used in:
