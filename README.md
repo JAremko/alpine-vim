@@ -38,9 +38,11 @@
 24. [YankRing](https://github.com/vim-scripts/YankRing.vim)      
 25. [Vim-HAML](https://github.com/tpope/vim-haml)       
 26. [UltiSnips](https://github.com/SirVer/ultisnips)       
-27. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets)      
-28. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
-29. [tlib](https://github.com/tomtom/tlib_vim)      
+27. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets)  
+28. [Easymotion](https://github.com/easymotion/vim-easymotion)
+29. [Undotree](https://github.com/mbbill/undotree)
+30. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
+31. [tlib](https://github.com/tomtom/tlib_vim)      
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)**   
 
