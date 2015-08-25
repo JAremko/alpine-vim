@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 cd /home/developer
 echo "let g:pathogen_disabled = [$DISABLE]" > .vimrc
 echo "execute pathogen#infect('/ext/bundle/{}')" >> .vimrc
