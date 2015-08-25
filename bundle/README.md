@@ -1,4 +1,4 @@
-###### **Plugins**  
+###### **Plugins:**  
 1. [Airline](https://github.com/bling/vim-airline)     
 2. [Tagbar](https://github.com/majutsushi/tagbar)    
 3. [EasyGrep](https://github.com/vim-scripts/EasyGrep)      
