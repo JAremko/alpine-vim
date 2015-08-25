@@ -1,4 +1,4 @@
-FROM jare/vim-pathogen:nopy
+FROM jare/vim-pathogen:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
