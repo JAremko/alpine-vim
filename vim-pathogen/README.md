@@ -1,5 +1,7 @@
-`vim-pathogen:nopy` [![vim-pathogen:nopy](https://badge.imagelayers.io/jare/vim-pathogen:nopy.svg)](https://imagelayers.io/?images=jare/vim-pathogen:nopy 'vim-pathogen:nopy')  
-`vim-pathogen:latest` [![vim-pathogen:latest](https://badge.imagelayers.io/jare/vim-pathogen:latest.svg)](https://imagelayers.io/?images=jare/vim-pathogen:latest 'vim-pathogen:latest')  
+`vim-pathogen:nopy`  
+ [![vim-pathogen:nopy](https://badge.imagelayers.io/jare/vim-pathogen:nopy.svg)](https://imagelayers.io/?images=jare/vim-pathogen:nopy 'vim-pathogen:nopy')  
+`vim-pathogen:latest`   
+[![vim-pathogen:latest](https://badge.imagelayers.io/jare/vim-pathogen:latest.svg)](https://imagelayers.io/?images=jare/vim-pathogen:latest 'vim-pathogen:latest')  
 
 
 Vim-Pathogen image based on  the [lightweight Vim](https://registry.hub.docker.com/u/jare/alpine-vim/)
