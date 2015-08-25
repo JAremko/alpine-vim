@@ -4,8 +4,8 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 COPY .vimrc /home/developer/my.vimrc
 
-RUN apk --update add git && rm -rf /var/cache/apk/* && sh /util/ocd-clean /usr/share/
-    
+RUN apk --update add curl ctags git ncurses-terminfo && rm -rf /var/cache/apk/* && sh /util/ocd-clean /usr/share/
+
 #Get Vim plugins
 RUN cd /home/developer/bundle/                                                                               && \
     git clone --depth 1 https://github.com/bling/vim-airline.git                                             && \
