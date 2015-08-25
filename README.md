@@ -45,7 +45,7 @@
 30. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
 31. [tlib](https://github.com/tomtom/tlib_vim)      
 
-**[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)**   
+**[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
 
 ###### **Keep in mind:**
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current file(`%` for the filename and `%:p ` for the absolute path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
