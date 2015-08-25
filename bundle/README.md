@@ -31,4 +31,4 @@
 30. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
 31. [tlib](https://github.com/tomtom/tlib_vim)      
 
-**[.vimrc](https://github.com/JAremko/alpine-vim/edit/master/bundle/.vimrc)**   
+**[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
