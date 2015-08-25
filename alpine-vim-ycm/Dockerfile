@@ -3,6 +3,7 @@ FROM jare/alpine-vim:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 RUN apk --update add --virtual ycm-build-deps python git go llvm perl bash cmake python-dev build-base      && \
+    mkdir -p /home/developer/bundle/                                                                        && \
     git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/ && \
     cd /home/developer/bundle/YouCompleteMe                                                                 && \
     git submodule update --init --recursive                                                                 && \
