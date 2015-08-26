@@ -6,6 +6,14 @@ COPY .vimrc /home/developer/my.vimrc
 
 RUN apk --update add curl ctags git python ncurses-terminfo                                                  && \
     cd /home/developer/bundle/                                                                               && \
+    git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                       && \
+    git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                      && \
+    git clone --depth 1 https://github.com/godlygeek/tabular.git                                             && \
+    git clone --depth 1 https://github.com/Raimondi/delimitMate.git                                          && \
+    git clone --depth 1 https://github.com/nathanaelkane/vim-indent-guides.git                               && \
+    git clone --depth 1 https://github.com/groenewege/vim-less.git                                           && \
+    git clone --depth 1 https://github.com/othree/html5.vim.git                                              && \
+    git clone --depth 1 https://github.com/elzr/vim-json.git                                                 && \
     git clone --depth 1 https://github.com/bling/vim-airline.git                                             && \
     git clone --depth 1 https://github.com/easymotion/vim-easymotion.git                                     && \
     git clone --depth 1 https://github.com/mbbill/undotree.git                                               && \
