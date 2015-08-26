@@ -45,7 +45,7 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                            && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
 #Cleanup
-    sh /util/ocd-clean /
+    sh /util/ocd-clean /                                                                                     && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #Build the default .vimrc
