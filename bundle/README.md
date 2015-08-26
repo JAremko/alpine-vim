@@ -19,22 +19,29 @@
 18. [Vim-multiple-cursor](https://github.com/terryma/vim-multiple-cursors) *True Sublime Text style multiple selections for Vim*       
 29. [Vim-repeat](https://github.com/tpope/vim-repeat) *Enable to repeat last change by non built-in commands*      
 20. [Vim-surround](https://github.com/tpope/vim-surround) *surround.vim: quoting/parenthesizing made simple*      
-21. [The Most Recently Used (MRU)](https://github.com/vim-scripts/mru.vim) *Plugin to manage Most Recently Used (MRU) files*      
-22. [YankRing](https://github.com/vim-scripts/YankRing.vim) *Maintains a history of previous yanks, changes and deletes*      
+21. [The Most Recently Used (MRU)](https://github.com/vim-scripts/mru.vim) *Plugin to manage Most Recently Used (MRU) files*
+22. [YankRing](https://github.com/vim-scripts/YankRing.vim) *Maintains a history of previous yanks, changes and deletes*
 23. [Vim-HAML](https://github.com/tpope/vim-haml) *Vim runtime files for Haml, Sass, and SCSS*       
-24. [UltiSnips](https://github.com/SirVer/ultisnips) *The ultimate snippet solution for Vim!*       
-25. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets) *vim-snipmate default snippets (Previously snipmate-snippets)*  
-26. [Easymotion](https://github.com/easymotion/vim-easymotion) *Vim motions on speed!*
-27. [Undotree](https://github.com/mbbill/undotree) *The ultimate undo history visualizer for VIM*
-28. [Vim-javascript](https://github.com/pangloss/vim-javascript) *Vastly improved Javascript indentation and syntax support in Vim.* 
-29. [NerdCommenter](https://github.com/scrooloose/nerdcommenter) *Plugin for intensely orgasmic commenting* 
-30. [Tabular](https://github.com/godlygeek/tabular) *Script for text filtering and alignment* 
-31. [DelimitMate](https://github.com/Raimondi/delimitMate) *Plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.* 
-32. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) *A Vim plugin for visually displaying indent levels in code* 
-33. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
-34. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
-35. [Vim-json](https://github.com/elzr/vim-json) *Syntax highlighting for JSON in Vim* 
-36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
-37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
+24. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets) *vim-snipmate default snippets (Previously snipmate-snippets)*  
+25. [Easymotion](https://github.com/easymotion/vim-easymotion) *Vim motions on speed!*
+26. [Undotree](https://github.com/mbbill/undotree) *The ultimate undo history visualizer for VIM*
+27. [Vim-javascript](https://github.com/pangloss/vim-javascript) *Vastly improved Javascript indentation and syntax support in Vim.* 
+28. [NerdCommenter](https://github.com/scrooloose/nerdcommenter) *Plugin for intensely orgasmic commenting* 
+39. [Tabular](https://github.com/godlygeek/tabular) *Script for text filtering and alignment* 
+30. [DelimitMate](https://github.com/Raimondi/delimitMate) *Plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.* 
+31. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) *A Vim plugin for visually displaying indent levels in code* 
+32. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
+33. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
+34. [Vim-json](https://github.com/elzr/vim-json) *Syntax highlighting for JSON in Vim* 
+35. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
+36. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
+
+###### Optional Plugins: 
+  - **`jare/bundle:latest`**  
+      - Python preinstalled
+      -[UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
+      -[YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim 
+  - **`jare/bundle:light`**  
+      - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
