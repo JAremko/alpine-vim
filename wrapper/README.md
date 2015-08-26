@@ -1,2 +1,1 @@
-`jare/wrapper:latest`   [![jare/wrapper:latest](https://badge.imagelayers.io/jare/wrapper:latest.svg)](https://imagelayers.io/?images=jare/wrapper:latest 'jare/wrapper:latest')   
-Vim wrapper used in [`jare/vim-bundle`](https://hub.docker.com/r/jare/vim-bundle/)
+[![jare/wrapper:latest](https://badge.imagelayers.io/jare/wrapper:latest.svg)](https://imagelayers.io/?images=jare/wrapper:latest 'jare/wrapper:latest')  Vim wrapper used in [`jare/vim-bundle`](https://hub.docker.com/r/jare/vim-bundle/)
