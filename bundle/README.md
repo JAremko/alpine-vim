@@ -13,28 +13,28 @@
 12. [Vim-expand-region](https://github.com/terryma/vim-expand-region) *Allows visual selection of increasingly larger regions of text using the same key combination*     
 13. [Fugitive](https://github.com/tpope/vim-fugitive) *fugitive.vim: a Git wrapper so awesome, it should be illegal*      
 14. [Gitgutter](https://github.com/airblade/vim-gitgutter) *Plugin which shows a git diff in the gutter (sign column) and stages/reverts hunks.*      
-15. [Vim-go](https://github.com/fatih/vim-go) **    
-16. [Vim-markdown](https://github.com/plasticboy/vim-markdown) **    
-17. [Vim-indent-object](https://github.com/michaeljsmith/vim-indent-object) **       
-18. [Vim-multiple-cursor](https://github.com/terryma/vim-multiple-cursors) **       
-29. [Vim-repeat](https://github.com/tpope/vim-repeat) **      
-20. [Vim-surround](https://github.com/tpope/vim-surround) **      
-21. [The Most Recently Used (MRU)](https://github.com/vim-scripts/mru.vim) **      
-22. [YankRing](https://github.com/vim-scripts/YankRing.vim) **      
-23. [Vim-HAML](https://github.com/tpope/vim-haml) **       
-24. [UltiSnips](https://github.com/SirVer/ultisnips) **       
-25. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets) **  
-26. [Easymotion](https://github.com/easymotion/vim-easymotion) **
-27. [Undotree](https://github.com/mbbill/undotree) **
-28. [Vim-javascript](https://github.com/pangloss/vim-javascript) ** 
-29. [NerdCommenter](https://github.com/scrooloose/nerdcommenter) ** 
-30. [Tabular](https://github.com/godlygeek/tabular) ** 
-31. [DelimitMate](https://github.com/Raimondi/delimitMate) ** 
-32. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) ** 
-33. [Vim-less](https://github.com/groenewege/vim-less) ** 
-34. [HTML5.vim](https://github.com/othree/html5.vim) ** 
-35. [Vim-json](https://github.com/elzr/vim-json **) 
-36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) **     
-37. [Tlib](https://github.com/tomtom/tlib_vim) **      
+15. [Vim-go](https://github.com/fatih/vim-go) *Go development plugin for Vim*    
+16. [Vim-markdown](https://github.com/plasticboy/vim-markdown) *Vim Markdown runtime files*    
+17. [Vim-indent-object](https://github.com/michaeljsmith/vim-indent-object) *Plugin that defines a new text object representing lines of code at the same indent level*       
+18. [Vim-multiple-cursor](https://github.com/terryma/vim-multiple-cursors) *True Sublime Text style multiple selections for Vim*       
+29. [Vim-repeat](https://github.com/tpope/vim-repeat) *Enable to repeat last change by non built-in commands*      
+20. [Vim-surround](https://github.com/tpope/vim-surround) *surround.vim: quoting/parenthesizing made simple*      
+21. [The Most Recently Used (MRU)](https://github.com/vim-scripts/mru.vim) *Plugin to manage Most Recently Used (MRU) files*      
+22. [YankRing](https://github.com/vim-scripts/YankRing.vim) *Maintains a history of previous yanks, changes and deletes*      
+23. [Vim-HAML](https://github.com/tpope/vim-haml) *Vim runtime files for Haml, Sass, and SCSS*       
+24. [UltiSnips](https://github.com/SirVer/ultisnips) *The ultimate snippet solution for Vim!*       
+25. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets) *vim-snipmate default snippets (Previously snipmate-snippets)*  
+26. [Easymotion](https://github.com/easymotion/vim-easymotion) *Vim motions on speed!*
+27. [Undotree](https://github.com/mbbill/undotree) *The ultimate undo history visualizer for VIM*
+28. [Vim-javascript](https://github.com/pangloss/vim-javascript) *Vastly improved Javascript indentation and syntax support in Vim.* 
+29. [NerdCommenter](https://github.com/scrooloose/nerdcommenter) *Plugin for intensely orgasmic commenting* 
+30. [Tabular](https://github.com/godlygeek/tabular) *Script for text filtering and alignment* 
+31. [DelimitMate](https://github.com/Raimondi/delimitMate) *Plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.* 
+32. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) *A Vim plugin for visually displaying indent levels in code* 
+33. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
+34. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
+35. [Vim-json](https://github.com/elzr/vim-json *Syntax highlighting for JSON in Vim*) 
+36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
+37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
