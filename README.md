@@ -53,8 +53,8 @@
 ###### Optional Plugins: 
   - **`jare/bundle:latest`**  
       - Python preinstalled
-      -[UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
-      -[YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim 
+      - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
+      - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim 
   - **`jare/bundle:light`**  
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
 
