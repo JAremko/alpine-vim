@@ -46,7 +46,9 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
 #Build YouCompleteMe
     apk --update add --virtual ycm-build-deps go python llvm perl cmake python-dev build-base                && \
-    mv -f /usr/bin/gofmt $GOROOT/bin/ && mv -f /usr/bin/go $GOROOT/bin/ && mv -f /usr/lib/go/* $GOROOT/      && \
+    mv -f /usr/bin/gofmt $GOROOT/bin/gofmt                                                                   && \
+    mv -f /usr/bin/go $GOROOT/bin/go                                                                         && \
+    mv -f /usr/lib/go/* $GOROOT/                                                                             && \
     git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/  && \
     cd /home/developer/bundle/YouCompleteMe                                                                  && \
     git submodule update --init --recursive                                                                  && \
