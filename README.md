@@ -55,10 +55,10 @@
       - Python preinstalled
       - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
       - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim 
+      - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)
   - **`jare/bundle:light`**  
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
-
-###### **My [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
+      - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
 
 ###### **Keep in mind:**
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current file(`%` for the filename and `%:p ` for the absolute path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
