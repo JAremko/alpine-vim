@@ -28,7 +28,6 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     git clone --depth 1 https://github.com/marcweber/vim-addon-mw-utils.git                                  && \
     git clone --depth 1 https://github.com/altercation/vim-colors-solarized.git                              && \
     git clone --depth 1 https://github.com/vim-scripts/taglist.vim.git                                       && \
-    git clone --depth 1 https://github.com/tpope/vim-commentary.git                                          && \
     git clone --depth 1 https://github.com/terryma/vim-expand-region.git                                     && \
     git clone --depth 1 https://github.com/tpope/vim-fugitive.git                                            && \
     git clone --depth 1 https://github.com/airblade/vim-gitgutter.git                                        && \
