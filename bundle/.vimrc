@@ -156,3 +156,15 @@ nnoremap <F5> :UndotreeToggle<cr>
 " => Set Vim working directory to the current location
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autochdir
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Set Tabular
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=','
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
