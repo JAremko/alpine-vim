@@ -4,7 +4,8 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 COPY .vimrc /home/developer/my.vimrc
 
-RUN apk --update add curl ctags git python ncurses-terminfo                                                  && \
+#Get plugins
+RUN apk --update add curl ctags git  ncurses-terminfo                                                        && \
     cd /home/developer/bundle/                                                                               && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                       && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                      && \
@@ -43,10 +44,20 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     git clone --depth 1 https://github.com/SirVer/ultisnips.git                                              && \
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                            && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
-    sh /util/ocd-clean /                                                                                     && \
+#Build YouCompleteMe
+    apk --update add --virtual ycm-build-deps go python llvm perl cmake python-dev build-base                && \
+    git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/  && \
+    cd /home/developer/bundle/YouCompleteMe                                                                  && \
+    git submodule update --init --recursive                                                                  && \
+    /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                       && \
+#Cleanup
+    apk --update del ycm-build-deps && apk --update add python libxt libx11 libstdc++                        && \
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
+      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                   && \
+    sh /util/ocd-clean /
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
-#build the default .vimrc
+#Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                    && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc~    && \
      curl https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc~ && \
