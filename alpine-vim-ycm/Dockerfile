@@ -3,7 +3,7 @@ FROM jare/bundle:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev build-base                 && \
+RUN apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                      && \
     mkdir -p /home/developer/bundle/                                                                        && \
     git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/           && \
     cd /home/developer/bundle/YouCompleteMe                                                                 && \
