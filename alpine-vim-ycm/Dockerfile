@@ -7,10 +7,9 @@ RUN apk --update add --virtual ycm-build-deps go llvm perl bash cmake python-dev
     mkdir -p /home/developer/bundle/                                                                        && \
     git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/           && \
     cd /home/developer/bundle/YouCompleteMe                                                                 && \
-    git reset --hard dd143bcaaab34bab2ef84953c4a06a3c13cefed0 && git clean -f                               && \
     git submodule update --init --recursive                                                                 && \
-    chmod 755 /home/developer/bundle/YouCompleteMe/install.sh                                               && \
-    /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer                                      && \
+    chmod 755 /home/developer/bundle/YouCompleteMe/install.py                                               && \
+    /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                      && \
 #cleanup
     apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                              && \
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
