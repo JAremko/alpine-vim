@@ -5,10 +5,7 @@ MAINTAINER JAremko <w3techplaygound@gmail.com>
 COPY .vimrc /home/developer/my.vimrc
 
 RUN apk --update add curl ctags git python ncurses-terminfo                                                  && \
-    rm -rf /var/cache/apk/* && sh /util/ocd-clean /usr/share/
-
-#Get Vim plugins
-RUN cd /home/developer/bundle/                                                                               && \
+    cd /home/developer/bundle/                                                                               && \
     git clone --depth 1 https://github.com/bling/vim-airline.git                                             && \
     git clone --depth 1 https://github.com/easymotion/vim-easymotion.git                                     && \
     git clone --depth 1 https://github.com/mbbill/undotree.git                                               && \
@@ -39,7 +36,7 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/SirVer/ultisnips.git                                              && \
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                            && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
-    sh /util/ocd-clean /usr/share/ &&  sh /util/ocd-clean  /home/developer/bundle/                           && \
+    sh /util/ocd-clean /                                                                                     && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #build the default .vimrc
