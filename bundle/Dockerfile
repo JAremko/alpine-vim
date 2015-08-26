@@ -38,7 +38,7 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/SirVer/ultisnips.git                                              && \
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                            && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
-    sh /util/ocd-clean /                                                                                     && \
+    sh /util/ocd-clean /usr/share/ &&  sh /util/ocd-clean  /home/developer/bundle/                           && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #build the default .vimrc
