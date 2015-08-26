@@ -33,7 +33,7 @@
 32. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) *A Vim plugin for visually displaying indent levels in code* 
 33. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
 34. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
-35. [Vim-json](https://github.com/elzr/vim-json *Syntax highlighting for JSON in Vim*) 
+35. [Vim-json](https://github.com/elzr/vim-json) *Syntax highlighting for JSON in Vim* 
 36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
 37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
 
