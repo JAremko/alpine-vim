@@ -3,7 +3,7 @@ FROM jare/alpine-vim:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
-RUN apk --update add python --virtual ycm-build-deps git go llvm perl bash cmake python-dev build-base      && \
+RUN apk --update add --virtual python ycm-build-deps git go llvm perl bash cmake python-dev build-base      && \
     mkdir -p /home/developer/bundle/                                                                        && \
     git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/           && \
     cd /home/developer/bundle/YouCompleteMe                                                                 && \
@@ -12,9 +12,8 @@ RUN apk --update add python --virtual ycm-build-deps git go llvm perl bash cmake
     chmod 755 /home/developer/bundle/YouCompleteMe/install.sh                                               && \
     /home/developer/bundle/YouCompleteMe/install.sh --gocode-completer                                      && \
 #cleanup
-    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                              && \
+    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++ python                       && \
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                  && \
     find '/home/developer/bundle/YouCompleteMe/' -name "*.vim" -exec sh /util/tidy-viml '{}' \;             && \
-    sh /util/ocd-clean /
-RUN apk --update add  python
+    sh /util/ocd-clean home/developer/bundle/YouCompleteMe/ && sh /util/ocd-clean /usr/share
