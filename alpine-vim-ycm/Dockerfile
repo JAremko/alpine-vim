@@ -16,4 +16,4 @@ RUN apk --update add --virtual ycm-build-deps python git go llvm perl bash cmake
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                  && \
     find '/home/developer/bundle/YouCompleteMe/' -name "*.vim" -exec sh /util/tidy-viml '{}' \;             && \
-    sh /util/ocd-clean home/developer/bundle/YouCompleteMe/ && sh /util/ocd-clean /usr/share
+    sh /util/ocd-clean /home/developer/bundle/YouCompleteMe/ && sh /util/ocd-clean /usr/share
