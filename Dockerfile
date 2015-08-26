@@ -1,4 +1,4 @@
-FROM jare/alpine-vim-ycm:latest
+FROM jare/bundle:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
