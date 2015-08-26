@@ -27,7 +27,15 @@
 26. [snipMate & UltiSnip Snippets](https://github.com/honza/vim-snippets)  
 27. [Easymotion](https://github.com/easymotion/vim-easymotion)
 28. [Undotree](https://github.com/mbbill/undotree)
-39. [vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
-30. [tlib](https://github.com/tomtom/tlib_vim)      
+29. [Vim-javascript](https://github.com/pangloss/vim-javascript) 
+30. [NerdCommenter](https://github.com/scrooloose/nerdcommenter) 
+31. [Tabular](https://github.com/godlygeek/tabular) 
+32. [DelimitMate](https://github.com/Raimondi/delimitMate) 
+33. [Vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) 
+34. [Vim-less](https://github.com/groenewege/vim-less) 
+35. [HTML5.vim](https://github.com/othree/html5.vim) 
+36. [Vim-json](https://github.com/elzr/vim-json) 
+37. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils)     
+38. [Tlib](https://github.com/tomtom/tlib_vim)      
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
