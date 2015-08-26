@@ -1,3 +1,6 @@
+`jare/bundle:light`   [![jare/bundle:light](https://badge.imagelayers.io/jare/bundle:light.svg)](https://imagelayers.io/?images=jare/bundle:light 'jare/bundle:light')   
+`jare/bundle:latest`   [![jare/bundle:latest](https://badge.imagelayers.io/jare/bundle:latest.svg)](https://imagelayers.io/?images=jare/bundle:latest 'jare/bundle:latest')  
+
 ###### **Plugins:**  
 1. [Airline](https://github.com/bling/vim-airline)  *Lean & mean status/tabline for vim that's light as air*   
 2. [Tagbar](https://github.com/majutsushi/tagbar) *Plugin that displays tags in a window, ordered by scope*    
