@@ -50,7 +50,7 @@
 35. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
 36. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
 
-###### Optional Plugins: 
+###### **+** Optional Plugins: 
   - **`jare/bundle:latest`**  
       - Python preinstalled
       - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
