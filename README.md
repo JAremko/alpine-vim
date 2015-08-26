@@ -60,9 +60,6 @@
 
 ###### **My [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
 
-**Used in: [vim-bundle★](https://registry.hub.docker.com/u/jare/vim-bundle/)**
- 
-
 ###### **Keep in mind:**
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current file(`%` for the filename and `%:p ` for the absolute path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
