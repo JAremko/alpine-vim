@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" It will be prefixed by  https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
+" It will be prepended with  https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
 
 
 nnoremap <SPACE> <Nop>
