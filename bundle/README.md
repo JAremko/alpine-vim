@@ -45,3 +45,6 @@
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
 
 **[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)**   
+
+Used in:
+- [vim-bundle★](https://registry.hub.docker.com/u/jare/vim-bundle/)
