@@ -54,7 +54,7 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     apk --update del ycm-build-deps && apk --update add python libxt libx11 libstdc++                        && \
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                   && \
-    sh /util/ocd-clean /
+    sh /util/ocd-clean /                                                                                     && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #Build the default .vimrc
