@@ -7,8 +7,8 @@ ENV DISABLE=""
 
 COPY run /usr/local/bin/
 
-#custom .vimrc stub
-RUN mkdir -p /ext/ && echo " " > /ext/.vimrc
+#                             custom .vimrc stub
+RUN mkdir -p /ext /goroot && echo " " > /ext/.vimrc
 
 ENV GOPATH /home/developer/workspace
 ENV GOROOT /goroot
