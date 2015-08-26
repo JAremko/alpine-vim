@@ -10,7 +10,7 @@
 9. [Vim-Scala](https://github.com/derekwyatt/vim-scala) *Integration of Scala into Vim - not a ton here, but useful*   
 10. [Solarized Colorscheme for Vim](https://github.com/altercation/vim-colors-solarized) *Solarized Colorscheme*       
 11. [Taglist](https://github.com/vim-scripts/taglist.vim) *Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)*      
-12. [Vim-expand-region](https://github.com/terryma/vim-expand-region) *Visual selection of increasingly larger regions of text using the same key combination*     
+12. [Vim-expand-region](https://github.com/terryma/vim-expand-region) *Visual selection of increasingly larger regions using the same key combination*     
 13. [Fugitive](https://github.com/tpope/vim-fugitive) *fugitive.vim: a Git wrapper so awesome, it should be illegal*      
 14. [Gitgutter](https://github.com/airblade/vim-gitgutter) *Plugin which shows a git diff in the gutter (sign column) and stages/reverts hunks.*      
 15. [Vim-go](https://github.com/fatih/vim-go) *Go development plugin for Vim*    
