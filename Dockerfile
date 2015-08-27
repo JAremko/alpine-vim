@@ -59,7 +59,7 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT/*  $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
     pip install git+https://github.com/gareth-rees/minipy                                                       && \
-    RUN find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                   && \
+    find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                       && \
     pip uninstall --yes minipy                                                                                  && \
     apk --update del ycm-build-deps && apk --update add  libxt libx11 libstdc++                                 && \
     sh /util/ocd-clean /  > /dev/null 2>&1                                                                      && \
