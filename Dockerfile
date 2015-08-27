@@ -46,7 +46,7 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                          && \
 #Build YouCompleteMe
     apk --update add --virtual ycm-build-deps go python llvm perl cmake python-dev build-base                && \
-    export  $GOROOT=/goroot && export $GOPATH=/home/developer/workspace                                      && \
+    export  GOROOT=/goroot && export GOPATH=/home/developer/workspace                                        && \
     mv -f /usr/bin/gofmt $GOROOT/bin/gofmt                                                                   && \
     mv -f /usr/bin/go $GOROOT/bin/go                                                                         && \
     mv -f /usr/lib/go/* $GOROOT/                                                                             && \
