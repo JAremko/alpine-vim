@@ -62,9 +62,8 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     pip install -e /tmp/minipy                                                                                  && \
     find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                       && \
     apk --update del ycm-build-deps && apk --update add  libxt libx11 libstdc++                                 && \
-    sh /util/ocd-clean /  > /dev/null 2>&1                                                                      && \
-    find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
-    
+    sh /util/ocd-clean /                                                                                        && \
+    find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' > /dev/null 2>&1 \; 
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
      curl -s https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim >> /home/developer/.vimrc~    && \
