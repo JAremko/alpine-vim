@@ -3,7 +3,6 @@ FROM jare/vim-wrapper:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 COPY .vimrc /home/developer/my.vimrc
-COPY opy /tmp/opy
 
 #Get plugins
 RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
@@ -46,7 +45,7 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
 #Build YouCompleteMe
-    apk --update add --virtual ycm-build-deps go py-pip llvm perl cmake python-dev build-base                   && \
+    apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                          && \
     export  GOROOT=/goroot && export GOPATH=/home/developer/workspace                                           && \
     mv -f /usr/bin/gofmt $GOROOT/bin/gofmt                                                                      && \
     mv -f /usr/bin/go $GOROOT/bin/go                                                                            && \
@@ -58,10 +57,7 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT/*  $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
-    git clone --depth 1 https://github.com/liftoff/pyminifier /tmp/pyminifier/                                  && \
-    pip install -e /tmp/pyminifier                                                                              && \
-    find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                       && \
-    apk --update del ycm-build-deps && apk --update add  libxt libx11 libstdc++                                 && \
+    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
     sh /util/ocd-clean /                                                                                        && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' > /dev/null 2>&1 \; 
 #Build the default .vimrc
