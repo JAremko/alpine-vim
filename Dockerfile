@@ -58,8 +58,8 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT/*  $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
-    git clone --depth 1 https://github.com/gareth-rees/minipy.git /tmp/minipy/                                  && \
-    pip install -e /tmp/minipy                                                                                  && \
+    git clone --depth 1 https://github.com/liftoff/pyminifier /tmp/pyminifier/                                  && \
+    pip install -e /tmp/pyminifier                                                                              && \
     find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                       && \
     apk --update del ycm-build-deps && apk --update add  libxt libx11 libstdc++                                 && \
     sh /util/ocd-clean /                                                                                        && \
