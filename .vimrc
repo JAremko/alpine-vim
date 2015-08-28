@@ -2,12 +2,7 @@
 " Huge thanks to "Amir Salihefendic" : https://github.com/amix
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" It will be prepended with  https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
-
-
-nnoremap <SPACE> <Nop>
-let mapleader=" "
+" It will be prepended with https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
 
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
