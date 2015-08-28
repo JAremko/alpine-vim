@@ -58,9 +58,9 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT/*  $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
-    pip install git+https://github.com/gareth-rees/minipy                                                       && \
+    git clone --depth 1 https://github.com/gareth-rees/minipy.git /tmp/minipy/                                  && \
+    pip install -e /tmp/minipy                                                                                  && \
     find / -type f -name "*.py" -exec sh /tmp/opy "{}" \;                                                       && \
-    pip uninstall --yes minipy                                                                                  && \
     apk --update del ycm-build-deps && apk --update add  libxt libx11 libstdc++                                 && \
     sh /util/ocd-clean /  > /dev/null 2>&1                                                                      && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
