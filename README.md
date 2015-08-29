@@ -61,7 +61,9 @@
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
 
 ###### **Working with Golang:**
-If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path and `%:h` Head of the file name). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
+  - For the full Golang support you need to mount `/goroot` volume. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached (`-d`) mode `docker run -d --name go-tools jare/go-tools` and mount its volumes like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle`
+ - 
+  - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path and `%:h` Head of the file name). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
 
 ###### **Keep in mind:**
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
@@ -69,6 +71,5 @@ If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [v
   - If you don't need YouCompleteMe use `jare/vim-bundle:no-ycm` instead. It's one-third the size of this image.
   - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
-  - For the full Golang support you need to mount `/goroot` volume. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached (`-d`) mode `docker run -d --name go-tools jare/go-tools` and mount its volumes like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle`
   - If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
   - **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you found a bug.**
