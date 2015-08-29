@@ -60,8 +60,10 @@
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
 
+###### **Working with Golang:**
+If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current file(`%` for the filename and `%:p ` for the absolute path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
+
 ###### **Keep in mind:**
-  - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current file(`%` for the filename and `%:p ` for the absolute path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
 `docker run ... -e TERM=xterm ... jare/vim-bundle`
   - If you don't need YouCompleteMe use `jare/vim-bundle:no-ycm` instead. It's one-third the size of this image.
