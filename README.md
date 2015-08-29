@@ -61,7 +61,7 @@
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
 
 ###### **Working with Golang:**
-If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` for the absolute file path). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
+If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path and `%:h` Head of the file name). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
 
 ###### **Keep in mind:**
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
