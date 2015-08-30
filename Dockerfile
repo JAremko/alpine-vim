@@ -3,6 +3,7 @@ FROM jare/vim-wrapper:latest
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
 COPY .vimrc /home/developer/my.vimrc
+ADD pyminifier.py opy /util/
 
 #Get plugins
 RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
@@ -60,8 +61,9 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
     find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -cf "{}.doc.tar" "{}" \;             && \
     sh /util/ocd-clean / > /dev/null 2>&1                                                                       && \
-    find /home/developer/bundle/ -maxdepth 2 -name "*.doc.tar" -exec tar -xf "{}" -C \/ \; -exec rm {} \;       && \
-    find /home/developer/bundle/ -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
+    find /home/developer/bundle/ -maxdepth 2 -name "*.doc.tar" -exec tar -xf "{}" -C \/ \; -exec rm "{}" \;     && \
+    find /home/developer/bundle/ -name "*.vim" -exec sh /util/tidy-viml "{}" \;                                 && \
+    find /  -type f -name "*.py" -exec sh /util/opy "{}" \;           
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
