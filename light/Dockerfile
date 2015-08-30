@@ -45,7 +45,9 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
 #Cleanup
+    find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -zcf "{}.doc.tar.gz" "{}" \;         && \
     sh /util/ocd-clean / > /dev/null 2>&1                                                                       && \
+    find "$1" -maxdepth 2 -type f -name "*.doc.tar.gz" -exec tar -xvzf "{}" -C \/ \;                            && \
     find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #Build the default .vimrc
