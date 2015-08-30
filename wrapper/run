@@ -3,6 +3,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 cd /home/developer
 echo "let g:pathogen_disabled = [$DISABLE]" > .vimrc
 echo "execute pathogen#infect('/ext/bundle/{}')" >> .vimrc
+echo "call pathogen#helptags()" >> .vimrc
 cat .vimrc~ >> .vimrc
 echo "source /ext/.vimrc" >> .vimrc
 cd /home/developer/workspace/
