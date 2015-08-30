@@ -29,6 +29,8 @@ RUN apk add --update --virtual build-deps python python-dev ctags build-base \
     cd /usr/share/vim/vim74/                                                   && \ 
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim                 && \
     find . -name *.txt | while read line; do rm "$line"; done                  && \
-    sh /util/ocd-clean /
+    sh /util/ocd-clean /                                                       && \
+    #fix for help tags generation
+    echo " " > /usr/share/vim/vim74/doc/help.txt                            
 
 ENTRYPOINT ["vim"]
