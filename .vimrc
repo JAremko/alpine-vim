@@ -4,12 +4,6 @@
 
 " It will be prepended with https://github.com/amix/vimrc/tree/master/vimrcs (basic.vim extended.vim)
 
-""""""""""""""""""""""""""""""
-" => Load pathogen paths
-""""""""""""""""""""""""""""""
-syntax on
-filetype plugin indent on
-
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -171,3 +165,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 nmap <F6> :IndentGuidesToggle<CR>
 set ts=2 sw=2 et
+
+
+""""""""""""""""""""""""""""""
+" => Pathogen help tags generation
+""""""""""""""""""""""""""""""
+call pathogen#helptags()
