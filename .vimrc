@@ -9,7 +9,6 @@
 """"""""""""""""""""""""""""""
 syntax on
 filetype plugin indent on
-call pathogen#helptags()
 
 
 """"""""""""""""""""""""""""""
