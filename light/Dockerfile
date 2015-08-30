@@ -47,8 +47,8 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
 #Cleanup
     find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -zcf "{}.doc.tar.gz" "{}" \;         && \
     sh /util/ocd-clean / > /dev/null 2>&1                                                                       && \
-    find "$1" -maxdepth 2 -type f -name "*.doc.tar.gz" -exec tar -xvzf "{}" -C \/ \;                            && \
-    find '/home/developer/bundle/' -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
+    find /home/developer/bundle/ -maxdepth 2 -type f -name "*.doc.tar.gz" -exec tar -xvzf "{}" -C \/ \;         && \
+    find /home/developer/bundle/ -name "*.vim" -exec sh /util/tidy-viml '{}' \; 
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
