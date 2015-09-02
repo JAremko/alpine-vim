@@ -70,7 +70,7 @@
       - use mouse right button menu by holding `Shift`.
   - `<Leader>` mapped to `,`. I use the basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim)  
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on your system.
-  - If your terminal doesn't support 256 colors change `TERM` environment variable:
+  - If your terminal doesn't support 256 colors - change `TERM` environment variable:
 `docker run ... -e TERM=xterm ... jare/vim-bundle`
   - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
