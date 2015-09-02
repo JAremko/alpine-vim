@@ -4,7 +4,7 @@
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)
 ###### **The best way to use:**  
 **Make an alias:**  
-`alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle"`
+`alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle"`  
 **Have fun!**  `edit some.file`
 ###### **How to disable some plugins:**  
 `docker run ... -e DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle`
