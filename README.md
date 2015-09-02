@@ -65,7 +65,9 @@
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path, `%:h` head of the file name and `%:p:h` is the current directory). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
 
 ###### **Keep in mind:**
-  - You should be able to drag and drop text into the Vim. And use mouse right button menu by holding `Shift key`.
+  - You should be able to:
+      - drag and drop text into the Vim.
+      - use mouse right button menu by holding `Shift key`.
   - `<Leader>` is mapped to `,`. I'm importing basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim)  
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on the your system.
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
