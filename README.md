@@ -68,7 +68,7 @@
   - You should be able to:
       - drag and drop text into the Vim.
       - use mouse right button menu by holding `Shift key`.
-  - `<Leader>` is mapped to `,`. I'm importing basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim)  
+  - `<Leader>` mapped to `,`. I'm importing basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim)  
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on the your system.
   - If your terminal doesn't support 256 colors change `TERM` environment variable:
 `docker run ... -e TERM=xterm ... jare/vim-bundle`
