@@ -78,7 +78,7 @@
   - **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you found a bug or if you have a suggestion.**
 
 ###### **Upcoming features:**
- - optional TypeScript and Scala integration.
+ - Optional TypeScript and Scala integration.
  - Stuff to help with TDD*(File watchers, build helpers)*.
  - Better aliases.
  - Tmux based manager *(docker in docker wrapper)*.
