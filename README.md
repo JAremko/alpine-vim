@@ -72,7 +72,7 @@
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on your system.
   - If your terminal doesn't support 256 colors - change `TERM` environment variable:
 `docker run ... -e TERM=xterm ... jare/vim-bundle`
-  - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine. But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
+  - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine([instruction](https://github.com/JAremko/alpine-vim/blob/master/powerline.md)). But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)   
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
   - If you have problem with colors - switch your terminal to the `solarized dark` theme and make sure that it uses default palette and  256 colors.
   - **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you found a bug.**
