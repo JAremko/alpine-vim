@@ -82,3 +82,5 @@
  - Stuff to help with TDD*(File watchers, build helpers)*.
  - Better aliases.
  - Tmux based manager *(docker in docker wrapper)*.
+ - Even more awesome plugins???
+ - Another round of unnecessary minification and semi-useless file purge to save couple of megabytes in 2016...
