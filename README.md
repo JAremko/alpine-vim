@@ -60,7 +60,7 @@
       - Python preinstalled
   - **`jare/bundle:light`**
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
-      - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
+      - [Snipmate](https://github.com/garbas/vim-snipmate) Provides support for textual snippets 
       - all other plugins
       - git
 
