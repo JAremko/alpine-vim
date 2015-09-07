@@ -52,13 +52,17 @@
 
 ###### **+** Optional Plugins: 
   - **`jare/bundle:latest`**  
+      - git
       - Python preinstalled
       - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
-      - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim 
+      - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim
+      - all other plugins
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)
-  - **`jare/bundle:light`**  
+  - **`jare/bundle:light`**
+      - git
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provide support for textual snippets 
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
+      - all other plugins
 
 ###### **Working with Golang:**
   - For the full Golang support you need to mount `/goroot` volume. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached mode `docker run -d --name go-tools jare/go-tools` and mount its volumes like this `docker run ...  --volumes-from go-tools ... jare/vim-bundle` or add it to the alias `alias edit="docker run -ti --rm --volumes-from go-tools -v $(pwd):/home/developer/workspace jare/vim-bundle"`
