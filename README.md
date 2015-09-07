@@ -55,13 +55,13 @@
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)
       - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
       - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim
-      - all other plugins
+      - *all other plugins*
       - git
       - Python
   - **`jare/bundle:light`**
       - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
       - [Snipmate](https://github.com/garbas/vim-snipmate) Provides support for textual snippets 
-      - all other plugins
+      - *all other plugins*
       - git
 
 ###### **Working with Golang:**
