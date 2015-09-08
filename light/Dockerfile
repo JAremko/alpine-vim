@@ -2,6 +2,8 @@ FROM jare/vim-wrapper:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
 
+LABEL jare-compatible-dockerized-vim="true"
+
 COPY .vimrc /home/developer/my.vimrc
 
 #Get plugins
