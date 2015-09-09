@@ -75,4 +75,5 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
      
 ENV GOPATH /home/developer/workspace
 ENV GOROOT /goroot
+ENV GOBIN /goroot/bin
 ENV HOME /home/developer
