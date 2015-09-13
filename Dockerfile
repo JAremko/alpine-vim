@@ -48,16 +48,16 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
 #Build YouCompleteMe
     apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                          && \
-    export  GOROOT=/goroot && export GOPATH=/home/developer/workspace                                           && \
-    mv -f /usr/bin/gofmt $GOROOT/bin/gofmt                                                                      && \
-    mv -f /usr/bin/go $GOROOT/bin/go                                                                            && \
+    export  GOROOT=/goroot && GOBIN=/goroot/bin && export GOPATH=/home/developer/workspace                      && \
+    mv -f /usr/bin/gofmt $GOBIN/gofmt                                                                           && \
+    mv -f /usr/bin/go $GOBIN/go                                                                                 && \
     mv -f /usr/lib/go/* $GOROOT/                                                                                && \
     git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/     && \
     cd /home/developer/bundle/YouCompleteMe                                                                     && \
     git submodule update --init --recursive                                                                     && \
     /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
 #Cleanup
-    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT/*  $GOPATH/* \
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
     apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
     find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -cf "{}.doc.tar" "{}" \;             && \
