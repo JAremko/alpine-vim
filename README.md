@@ -86,5 +86,4 @@
  - Optional TypeScript and Scala integration.
  - Stuff to help with TDD*(File watchers, build helpers)*.
  - Better aliases.
- - Tmux based manager *(docker in docker wrapper)*.
  - Even more awesome plugins???
