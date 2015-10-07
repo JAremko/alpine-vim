@@ -6,9 +6,21 @@ LABEL jare-compatible-dockerized-vim="true"
 
 COPY .vimrc /home/developer/my.vimrc
 
-#Get plugins
+#Plugins deps
 RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
-    cd /home/developer/bundle/                                                                                  && \
+#Build YouCompleteMe
+    apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                          && \
+    git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/     && \
+    cd /home/developer/bundle/YouCompleteMe                                                                     && \
+    git submodule update --init --recursive                                                                     && \
+    /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
+#Cleanup
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT $GOPATH/* \
+      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes /usr/lib/go                          && \
+    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
+    sh /util/ocd-clean / > /dev/null 2>&1 
+    
+RUN cd /home/developer/bundle/                                                                                  && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                          && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                         && \
     git clone --depth 1 https://github.com/godlygeek/tabular.git                                                && \
@@ -46,20 +58,8 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     git clone --depth 1 https://github.com/SirVer/ultisnips.git                                                 && \
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
-#Build YouCompleteMe
-    apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                          && \
-    git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/     && \
-    cd /home/developer/bundle/YouCompleteMe                                                                     && \
-    git submodule update --init --recursive                                                                     && \
-    /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
 #Cleanup
-    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT $GOPATH/* \
-      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes /usr/lib/go                          && \
-    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
-    find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -cf "{}.doc.tar" "{}" \;             && \
-    sh /util/ocd-clean / > /dev/null 2>&1                                                                       && \
-    find /home/developer/bundle/ -maxdepth 2 -name "*.doc.tar" -exec tar -xf "{}" -C \/ \; -exec rm "{}" \;     && \
-    find /home/developer/bundle/ -name "*.vim" -exec sh /util/tidy-viml "{}" \; 
+    sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1   
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
