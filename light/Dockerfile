@@ -6,9 +6,10 @@ LABEL jare-compatible-dockerized-vim="true"
 
 COPY .vimrc /home/developer/my.vimrc
 
-#Get plugins
-RUN apk --update add curl ctags git  ncurses-terminfo                                                           && \
-    cd /home/developer/bundle/                                                                                  && \
+#Plugins deps
+RUN apk --update add curl ctags git  ncurses-terminfo && /util/ocd-clean /  > /dev/null 2>&1   
+     
+RUN cd /home/developer/bundle/                                                                                  && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                          && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                         && \
     git clone --depth 1 https://github.com/godlygeek/tabular.git                                                && \
@@ -47,10 +48,7 @@ RUN apk --update add curl ctags git  ncurses-terminfo                           
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
 #Cleanup
-    find /home/developer/bundle/ -maxdepth 2 -type d -name "doc" -exec tar -cf "{}.doc.tar" "{}" \;             && \
-    sh /util/ocd-clean / > /dev/null 2>&1                                                                       && \
-    find /home/developer/bundle/ -maxdepth 2 -name "*.doc.tar" -exec tar -xf "{}" -C \/ \; -exec rm "{}" \;     && \
-    find /home/developer/bundle/ -name "*.vim" -exec sh /util/tidy-viml "{}" \; 
+    sh /util/ocd-clean /home/developer/bundle/ > /dev/null 2>&1                                                  
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
