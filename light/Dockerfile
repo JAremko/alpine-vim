@@ -61,3 +61,9 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
 
 #Pathogen help tags generation
 RUN vim -E -c 'execute pathogen#helptags()' -c q
+
+ENV GOPATH /home/developer/workspace
+ENV GOROOT /usr/lib/go
+ENV GOBIN $GOROOT/bin
+ENV PATH $PATH:$GOBIN:$GOPATH/bin
+ENV HOME /home/developer
