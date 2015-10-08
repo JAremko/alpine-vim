@@ -60,4 +60,4 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
      sh /util/tidy-viml /home/developer/.vimrc~                                                              
 
 #Pathogen help tags generation
-RUN vim -E -c pathogen#helptags -c q
+RUN vim -E -c 'execute pathogen#helptags()' -c q
