@@ -7,9 +7,8 @@ LABEL jare-compatible-dockerized-vim="true"
 COPY .vimrc /home/developer/my.vimrc
 
 #Plugins deps
-RUN apk --update add curl ctags git ncurses-terminfo && /util/ocd-clean /
-     
-RUN cd /home/developer/bundle/                                                                                  && \
+RUN apk --update add curl ctags git ncurses-terminfo                                                            && \
+    cd /home/developer/bundle/                                                                                  && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                          && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                         && \
     git clone --depth 1 https://github.com/godlygeek/tabular.git                                                && \
@@ -48,7 +47,7 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
 #Cleanup
-    sh /util/ocd-clean /home/developer/bundle/ > /dev/null 2>&1                                                  
+    sh /util/ocd-clean / > /dev/null 2>&1                                                  
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
