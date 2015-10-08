@@ -8,6 +8,7 @@ COPY .vimrc /home/developer/my.vimrc
 
 #Plugins deps
 RUN apk --update add curl ctags git ncurses-terminfo                                                            && \
+
     cd /home/developer/bundle/                                                                                  && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                          && \
     git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git                                         && \
