@@ -69,6 +69,9 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
      rm /home/developer/my.vimrc                                                                                && \
      sh /util/tidy-viml /home/developer/.vimrc~     
 
+#Pathogen help tags generation
+RUN vim -E -c pathogen#helptags()
+
 ENV GOPATH /home/developer/workspace
 ENV GOROOT /usr/lib/go
 ENV GOBIN $GOROOT/bin
