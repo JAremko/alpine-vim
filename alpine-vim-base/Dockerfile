@@ -23,12 +23,12 @@ RUN apk add --update --virtual build-deps python python-dev ctags build-base \
     apk del build-deps                                                         && \
     apk add --update libsm libice libxt libx11 ncurses                         && \
     #deleting docs, tutorials, icons and lang
-    rm -rf /usr/share/vim/vim74/doc/* /usr/share/man/* /usr/share/icons/* \
-      /usr/share/doc/* /tmp/* /var/cache/* /var/log/* /var/tmp/*               && \
+    rm -rf /usr/share/man/* /usr/share/icons/* /usr/share/doc/* /tmp/* \
+      /var/cache/* /var/log/* /var/tmp/*                                       && \
     mkdir /var/cache/apk                                                       && \
     cd /usr/share/vim/vim74/                                                   && \ 
     rm -rf lang/* tutor/* gvimrc_example.vim vimrc_example.vim                 && \
     find . -name *.txt | while read line; do rm "$line"; done                  && \
-    sh /util/ocd-clean /                                                       
+    sh /util/ocd-clean /                                           
 
 ENTRYPOINT ["vim"]
