@@ -3,6 +3,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$GOBIN
 cd /home/developer
 echo "let g:pathogen_disabled = [$DISABLE]" > .vimrc
 echo "execute pathogen#infect('/ext/bundle/{}')" >> .vimrc
+mkdir -p /home/developer/.vim_runtime/temp_dirs
 cat .vimrc~ >> .vimrc
 echo "source /ext/.vimrc" >> .vimrc
 cd /home/developer/workspace/
