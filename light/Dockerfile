@@ -7,7 +7,7 @@ LABEL jare-compatible-dockerized-vim="true"
 COPY .vimrc /home/developer/my.vimrc
 
 #Plugins deps
-RUN apk --update add curl ctags git  ncurses-terminfo && /util/ocd-clean /  > /dev/null 2>&1   
+RUN apk --update add curl ctags git ncurses-terminfo && /util/ocd-clean /
      
 RUN cd /home/developer/bundle/                                                                                  && \
     git clone --depth 1 https://github.com/pangloss/vim-javascript.git                                          && \
