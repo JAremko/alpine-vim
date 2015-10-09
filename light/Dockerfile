@@ -50,6 +50,7 @@ RUN apk --update add curl ctags git ncurses-terminfo                            
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
     git clone --depth 1 https://github.com/leafgarland/typescript-vim.git                                       && \
+    git clone --depth 1 https://github.com/christoomey/vim-tmux-navigator.git                                   && \
 #Cleanup
     sh /util/ocd-clean /  > /dev/null 2>&1                                                
     
