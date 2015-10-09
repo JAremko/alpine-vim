@@ -76,5 +76,6 @@ RUN vim -E -c 'execute pathogen#helptags()' -c q ; return 0
 ENV GOPATH /home/developer/workspace
 ENV GOROOT /usr/lib/go
 ENV GOBIN $GOROOT/bin
-ENV PATH $PATH:$GOBIN:$GOPATH/bin
+ENV NODEBIN /usr/lib/node_modules/bin
+ENV PATH $PATH:$GOBIN:$GOPATH/bin:$NODEBIN
 ENV HOME /home/developer
