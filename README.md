@@ -96,7 +96,7 @@ main () {
      echo "Done!"
     fi
     echo "Starting Vim"
-    docker run -ti --rm -p 8080:8080 -p 80:80 --volumes-from "vim-go-tools" \ 
+    docker run -ti --rm -p 8080:8080 --volumes-from "vim-go-tools" \ 
       --volumes-from "vim-typescript" \
       -v "${workspace}":/home/developer/workspace "${image_name}" "${@}"
   }
