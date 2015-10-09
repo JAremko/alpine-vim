@@ -52,7 +52,7 @@
 35. [Vim-TypeScript](https://github.com/leafgarland/typescript-vim) *Syntax file and other settings for TypeScript.*
 36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
 37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*  
-38. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.*
+38. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys*
 
 ###### **+** Optional Plugins: 
   - **`jare/bundle:latest`**  
