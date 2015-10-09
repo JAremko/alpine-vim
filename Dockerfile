@@ -58,7 +58,9 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/SirVer/ultisnips.git                                                 && \
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
-    
+    git clone --depth 1 https://github.com/leafgarland/typescript-vim.git                                       && \
+#Node.js deps (needed only if you're planning to mount and run jare/typescript)
+    apk --update add libgcc libstdc++ libuv                                                                     && \
 #Cleanup
     sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1   
     
