@@ -76,7 +76,7 @@
  
 ###### Alternatively, you can put something like into your .bashrc to automatically bootstrap all containers:  
  ``` bash
- #docker vim-bunlde
+#docker vim-bunlde
 main () {
   local image_name="jare/vim-bundle:latest"
   local workspace=$(pwd)
