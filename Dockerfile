@@ -12,14 +12,12 @@ RUN apk --update add curl ctags git python ncurses-terminfo                     
     apk add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                                   && \
     git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/               && \
     cd /home/developer/bundle/YouCompleteMe                                                                     && \
-    git reset --hard a7bb97f100fe9780850226250c341e1dda838a9e                                                   && \
-    git submodule update --init --recursive                                                                     && \
     /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
 #Node.js deps (needed only if you're planning to mount and run jare/typescript)
     apk add libgcc libstdc++ libuv                                                                              && \
 #Cleanup
-    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT $GOPATH/* \
-      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes /usr/lib/go                          && \
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp /usr/lib/go  \
+      /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
     apk del ycm-build-deps                                                                                      && \ 
     apk add libxt libx11 libstdc++                                                                              && \
     sh /util/ocd-clean / > /dev/null 2>&1 
