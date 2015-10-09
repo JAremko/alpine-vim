@@ -49,8 +49,9 @@
 32. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
 33. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
 34. [Vim-json](https://github.com/elzr/vim-json) *Syntax highlighting for JSON in Vim* 
-35. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
-36. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
+35. [Vim-TypeScript](https://github.com/leafgarland/typescript-vim) *Syntax file and other settings for TypeScript.*
+36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
+37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*      
 
 ###### **+** Optional Plugins: 
   - **`jare/bundle:latest`**  
