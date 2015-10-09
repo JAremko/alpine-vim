@@ -21,7 +21,7 @@ RUN apk add --update --virtual build-deps python python-dev ctags build-base \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                                    && \
     make install                                                               && \
     apk del build-deps                                                         && \
-    apk add --update libsm libice libxt libx11 ncurses                         && \
+    apk add libsm libice libxt libx11 ncurses                                  && \
     #deleting docs, tutorials, icons and lang
     rm -rf /usr/share/man/* /usr/share/icons/* /usr/share/doc/* /tmp/* \
       /var/cache/* /var/log/* /var/tmp/*                                       && \
