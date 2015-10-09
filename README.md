@@ -72,7 +72,7 @@
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path, `%:h` head of the file name and `%:p:h` is the current directory). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
 
 ###### **Working with typescript/Node.js:**
-  Same as with the Golang tools. You can use [`jare/typescript`](https://hub.docker.com/r/jare/typescript)
+  Same as with the Golang tools. You can use [`jare/typescript`](https://hub.docker.com/r/jare/typescript) and mount it in to the `/usr/lib/node_modules/` 
   
 ###### **Keep in mind:**
   - You should be able to:
