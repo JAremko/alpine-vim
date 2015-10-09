@@ -9,15 +9,18 @@ COPY .vimrc /home/developer/my.vimrc
 #Plugins deps
 RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
 #Build YouCompleteMe
-    apk --update add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                          && \
+    apk add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                                   && \
     git clone --depth 1 https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/     && \
     cd /home/developer/bundle/YouCompleteMe                                                                     && \
     git submodule update --init --recursive                                                                     && \
     /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
+#Node.js deps (needed only if you're planning to mount and run jare/typescript)
+    apk add libgcc libstdc++ libuv                                                                              && \
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp $GOROOT $GOPATH/* \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes /usr/lib/go                          && \
-    apk --update del ycm-build-deps && apk --update add libxt libx11 libstdc++                                  && \
+    apk del ycm-build-deps                                                                                      && \ 
+    apk add libxt libx11 libstdc++                                                                              && \
     sh /util/ocd-clean / > /dev/null 2>&1 
     
 RUN cd /home/developer/bundle/                                                                                  && \
@@ -59,8 +62,6 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/honza/vim-snippets.git                                               && \
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
     git clone --depth 1 https://github.com/leafgarland/typescript-vim.git                                       && \
-#Node.js deps (needed only if you're planning to mount and run jare/typescript)
-    apk --update add libgcc libstdc++ libuv                                                                     && \
 #Cleanup
     sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1   
     
