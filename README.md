@@ -77,39 +77,27 @@
 ###### Alternatively, you can put something like into your .bashrc to automatically bootstrap all containers:  
  ``` bash
 #docker vim-bunlde
-main () {
-  local image_name="jare/vim-bundle:latest"
-  local workspace=$(pwd)
-
-  run_vim-docker() { 
-    local dtc_id=$(docker ps -a -q --filter "name=vim-go-tools")
-    local ts_id=$(docker ps -a -q --filter "name=vim-typescript")
-    if [[ -z "${dtc_id}" ]]; then
-     echo "vim-go-tools container not found. Creating..."
-     docker create -v /usr/lib/go --name vim-go-tools \
-       jare/go-tools /bin/true
-     echo "Done!"
-    fi
-    if [[ -z "${ts_id}" ]]; then
-     echo "vim-typescript container not found. Creating..."
-     docker create -v /usr/lib/node_modules \
-       --name vim-typescript jare/typescript /bin/true
-     echo "Done!"
-    fi
-    echo "Starting Vim"
-    docker run -ti --rm -p 8080:8080 --volumes-from "vim-go-tools" \ 
-      --volumes-from "vim-typescript" \
-      -v "${workspace}":/home/developer/workspace "${image_name}" "${@}"
-  }
-  update_vim-docker() { 
-    docker pull "${image_name}"
-  }
-  if  [[ -z "${1// }" ]]; then
-    run_vim-docker
-    return 0
+vimed() {
+  local dtc_id=$(docker ps -a -q --filter 'name=vim-go-tools')
+  local ts_id=$(docker ps -a -q --filter 'name=vim-typescript')
+  if [[ -z "${dtc_id}" ]]; then
+   echo 'vim-go-tools container not found. Creating...'
+   docker create -v '/usr/lib/go' --name 'vim-go-tools' \
+     'jare/go-tools' '/bin/true'
+   echo 'Done!'
   fi
+  if [[ -z "${ts_id}" ]]; then
+   echo 'vim-typescript container not found. Creating...'
+   docker create -v '/usr/lib/node_modules' \
+     --name 'vim-typescript' 'jare/typescript' '/bin/true'
+   echo 'Done!'
+  fi
+  echo 'Starting Vim'
+  docker run -ti --rm -p 8080:8080 --volumes-from 'vim-go-tools' \
+    --volumes-from 'vim-typescript' \
+    -v $('pwd'):/home/developer/workspace 'jare/vim-bundle' "${@}"
 }
-alias edit="main()"
+alias ed=vimed
  ``` 
 ###### **Keep in mind:**
   - You should be able to:
