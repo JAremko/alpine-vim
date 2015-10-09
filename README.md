@@ -126,5 +126,3 @@ alias edit="main()"
 ###### **Upcoming features:**
  - Optional Scala integration.
  - Stuff to help with TDD*(File watchers, build helpers)*.
- - Better aliases.
- - Even more awesome plugins???
