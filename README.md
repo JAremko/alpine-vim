@@ -86,7 +86,8 @@ main () {
     local ts_id=$(docker ps -a -q --filter "name=vim-typescript")
     if [[ -z "${dtc_id}" ]]; then
      echo "vim-go-tools container not found. Creating..."
-     docker create -v /usr/lib/go --name vim-go-tools jare/go-tools /bin/true
+     docker create -v /usr/lib/go --name vim-go-tools \
+       jare/go-tools /bin/true
      echo "Done!"
     fi
     if [[ -z "${ts_id}" ]]; then
