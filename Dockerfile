@@ -10,8 +10,9 @@ COPY .vimrc /home/developer/my.vimrc
 RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
 #Build YouCompleteMe
     apk add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                                   && \
-    git clone https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/               && \
+    git clone --depth 1  https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/    && \
     cd /home/developer/bundle/YouCompleteMe                                                                     && \
+    git submodule update --init --recursive                                                                     && \
     /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
 #Node.js deps (needed only if you're planning to mount and run jare/typescript)
     apk add libgcc libstdc++ libuv                                                                              && \
