@@ -25,7 +25,6 @@ map <leader>f :MRU<CR>
 """"""""""""""""""""""""""""""
 " => YankRing
 """"""""""""""""""""""""""""""
-:call mkdir("/home/developer/.vim_runtime/temp_dirs", "p")
 let g:yankring_history_dir = '/home/developer/.vim_runtime/temp_dirs'
 
 
