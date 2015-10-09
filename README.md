@@ -77,7 +77,7 @@
 ###### Alternatively, you can put something like into your .bashrc to automatically bootstrap all containers:  
  ``` bash
 #docker vim-bunlde
-vimed() {
+function ed() {
   local dtc_id=$(docker ps -a -q --filter 'name=vim-go-tools')
   local ts_id=$(docker ps -a -q --filter 'name=vim-typescript')
   if [[ -z "${dtc_id}" ]]; then
@@ -97,7 +97,7 @@ vimed() {
     --volumes-from 'vim-typescript' \
     -v $('pwd'):/home/developer/workspace 'jare/vim-bundle' "${@}"
 }
-alias ed=vimed
+export -f ed
  ``` 
 ###### **Keep in mind:**
   - You should be able to:
