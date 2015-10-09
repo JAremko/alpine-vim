@@ -11,7 +11,8 @@
 `docker run ... -e DISABLE="'vim-airline', 'nerdtree'" ... jare/vim-bundle`
 ###### **How to add your plugins and .vimrc:**
   1. Create a folder with your `.vimrc` file and, if you want to add plugins, subfolder called `bundle` with them.
-  2. mount it: `docker run ... -v <***>/my-stuff:/ext/ ... jare/vim-bundle`
+  2. mount it: `docker run ... -v <***>/my-stuff:/ext/ ... jare/vim-bundle` 
+  *But the best we will be extending this container.*
 
 ###### **Plugins:**  
 1. [Airline](https://github.com/bling/vim-airline)  *Lean & mean status/tabline for vim that's light as air*   
@@ -69,6 +70,9 @@
   - For the full Golang support you need to mount `/usr/lib/go`. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached mode `docker create -v /usr/lib/go --name vim-go-tools jare/go-tools /bin/true` and mount its volumes like this `docker run ...  --volumes-from vim-go-tools ... jare/vim-bundle` or add it to the alias `alias edit="docker run -ti --rm --volumes-from go-tools -v $(pwd):/home/developer/workspace jare/vim-bundle"`
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path, `%:h` head of the file name and `%:p:h` is the current directory). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
 
+###### **Working with typescript/Node.js:**
+  Same as with the Golang tools. You can use [`jare/typescript`](https://hub.docker.com/r/jare/typescript)
+  
 ###### **Keep in mind:**
   - You should be able to:
       - drag and drop text into the Vim.
