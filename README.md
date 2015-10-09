@@ -74,7 +74,8 @@
 ###### **Working with typescript/Node.js:**
   Same as with the Golang tools. You can use [`jare/typescript`](https://hub.docker.com/r/jare/typescript) and mount it in to the `/usr/lib/node_modules/` 
  
-###### Alternatively, you can put something like into your .bashrc to automatically bootstrap all containers:  
+###### Alternatively, you can put something like this into .bashrc to automatically bootstrap all containers:  
+
  ``` bash
 #docker vim-bunlde
 function ed() {
