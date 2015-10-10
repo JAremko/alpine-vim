@@ -102,7 +102,7 @@ function ed() {
 export -f ed
  ``` 
 ###### **Keep in mind:**
-  - You should be able to:
+  - With something like GNOME terminal You should be able to:
       - drag and drop text into the Vim.
       - use mouse right button menu by holding `Shift`.
   - `<Leader>` mapped to `,`. I use the basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/tree/master/vimrcs)  
