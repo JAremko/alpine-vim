@@ -169,3 +169,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 nmap <F6> :IndentGuidesToggle<CR>
 set ts=2 sw=2 et
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 256 colors terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256
