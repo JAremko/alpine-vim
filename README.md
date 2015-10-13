@@ -1,7 +1,10 @@
 `jare/vim-bundle:light`   [![jare/vim-bundle:light](https://badge.imagelayers.io/jare/vim-bundle:light.svg)](https://imagelayers.io/?images=jare/vim-bundle:light 'jare/vim-bundle:light')   
 `jare/vim-bundle:latest`   [![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest')  
 
-####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)
+#### for the more *"IDE like experience"* try [`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)  
+[![](http://i.imgur.com/RVTlBBO.png)](http://i.imgur.com/RVTlBBO.png) 
+
+####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
 ###### **The best way to use:**  
 **Make an alias:**  
 `alias edit="docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle"`  
