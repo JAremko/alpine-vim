@@ -7,7 +7,7 @@ LABEL jare-compatible-dockerized-vim="true"
 COPY .vimrc /home/developer/my.vimrc
 
 #Plugins deps
-RUN apk --update add curl ctags git python ncurses-terminfo                                                     && \
+RUN apk --update add curl ctags git python bash ncurses-terminfo                                                && \
 #Build YouCompleteMe
     apk add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                                   && \
     git clone --depth 1  https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/    && \
