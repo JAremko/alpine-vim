@@ -7,7 +7,7 @@ LABEL jare-compatible-dockerized-vim="true"
 COPY .vimrc /home/developer/my.vimrc
 
 #Plugins deps
-RUN apk --update add curl ctags git ncurses-terminfo                                                            && \
+RUN apk --update add curl ctags git bash ncurses-terminfo                                                       && \
 #Node.js deps (needed only if you're planning to mount and run jare/typescript)
     apk add libgcc libstdc++ libuv                                                                              && \
 
