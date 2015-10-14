@@ -20,6 +20,8 @@ RUN apk --update add curl ctags git python bash ncurses-terminfo                
     git clone --depth 1 https://github.com/Shougo/vimproc.vim.git /home/developer/bundle/vimproc.vim            && \
     cd /home/developer/bundle/vimproc.vim                                                                       && \
     make                                                                                                        && \
+    mv /home/developer/bundle/vimproc.vim/lib/vimproc_linux64.so                                                   \
+      /home/developer/bundle/vimproc.vim/lib/vimproc_unix.so                                                    && \
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp /usr/lib/go  \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
