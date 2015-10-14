@@ -58,6 +58,8 @@
 38. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys*
 39. [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
 40. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
+41. [Vimproc.vim](https://github.com/Valloric/YouCompleteMe) Interactive command execution in Vim
+42. [Tsuquyomi](https://github.com/Quramy/tsuquyomi) A Vim plugin for TypeScript
 
 *[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)*
 
