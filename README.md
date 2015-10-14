@@ -59,7 +59,7 @@
 39. [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
 40. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
 
-*[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)*
+*[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)*
 
 ###### **Working with Golang:**
   - For the full Golang support you need to mount `/usr/lib/go`. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached mode `docker create -v /usr/lib/go --name vim-go-tools jare/go-tools /bin/true` and mount its volumes like this `docker run ...  --volumes-from vim-go-tools ... jare/vim-bundle` or add it to the alias `alias edit="docker run -ti --rm --volumes-from go-tools -v $(pwd):/home/developer/workspace jare/vim-bundle"`
