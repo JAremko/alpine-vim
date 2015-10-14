@@ -9,17 +9,21 @@ COPY .vimrc /home/developer/my.vimrc
 #Plugins deps
 RUN apk --update add curl ctags git python bash ncurses-terminfo                                                && \
 #Build YouCompleteMe
-    apk add --virtual ycm-build-deps go llvm perl cmake python-dev build-base                                   && \
+    apk add --virtual build-deps go llvm perl cmake python-dev build-base                                       && \
     git clone --depth 1  https://github.com/Valloric/YouCompleteMe.git /home/developer/bundle/YouCompleteMe/    && \
     cd /home/developer/bundle/YouCompleteMe                                                                     && \
     git submodule update --init --recursive                                                                     && \
     /home/developer/bundle/YouCompleteMe/install.py --gocode-completer                                          && \
 #Node.js deps (needed only if you're planning to mount and run jare/typescript)
     apk add libgcc libstdc++ libuv                                                                              && \
+#Install and compile procvim.vim                                                                               
+    git clone --depth 1 https://github.com/Shougo/vimproc.vim.git /home/developer/bundle/vimproc.vim            && \
+    cd /home/developer/bundle/vimproc.vim                                                                       && \
+    make                                                                                                        && \
 #Cleanup
     rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp /usr/lib/go  \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
-    apk del ycm-build-deps                                                                                      && \ 
+    apk del build-deps                                                                                          && \
     apk add libxt libx11 libstdc++                                                                              && \
     sh /util/ocd-clean / > /dev/null 2>&1 
     
@@ -63,8 +67,9 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/derekwyatt/vim-scala.git                                             && \
     git clone --depth 1 https://github.com/leafgarland/typescript-vim.git                                       && \
     git clone --depth 1 https://github.com/christoomey/vim-tmux-navigator.git                                   && \
+    git clone --depth 1 https://github.com/Quramy/tsuquyomi.git                                                 && \
 #Cleanup
-    sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1   
+    sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1
     
 #Build the default .vimrc
 RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                                                       && \
