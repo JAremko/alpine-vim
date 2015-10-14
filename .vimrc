@@ -183,3 +183,21 @@ set t_Co=256
 " => UTF-8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar TypeScript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+\ }
