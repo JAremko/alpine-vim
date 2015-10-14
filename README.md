@@ -1,5 +1,3 @@
-`jare/vim-bundle:light`   
-[![jare/vim-bundle:light](https://badge.imagelayers.io/jare/vim-bundle:light.svg)](https://imagelayers.io/?images=jare/vim-bundle:light 'jare/vim-bundle:light')   
 `jare/vim-bundle:latest`   
 [![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest')  
 
@@ -58,20 +56,10 @@
 36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*     
 37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*  
 38. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys*
+39. [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
+40. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
 
-###### **+** Optional Plugins: 
-  - **`jare/bundle:latest`**  
-      - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)
-      - [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
-      - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion engine for Vim
-      - *all other plugins*
-      - git
-      - Python
-  - **`jare/bundle:light`**
-      - [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/light/.vimrc)
-      - [Snipmate](https://github.com/garbas/vim-snipmate) Provides support for textual snippets 
-      - *all other plugins*
-      - git
+*[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/bundle/.vimrc)*
 
 ###### **Working with Golang:**
   - For the full Golang support you need to mount `/usr/lib/go`. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached mode `docker create -v /usr/lib/go --name vim-go-tools jare/go-tools /bin/true` and mount its volumes like this `docker run ...  --volumes-from vim-go-tools ... jare/vim-bundle` or add it to the alias `alias edit="docker run -ti --rm --volumes-from go-tools -v $(pwd):/home/developer/workspace jare/vim-bundle"`
