@@ -1,7 +1,7 @@
 `jare/vim-bundle:latest`   
 [![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest')  
 
-#### for the more *"IDE like experience"* try [`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)  
+#### For the more *"IDE like experience"* try [`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)  
 [![](http://i.imgur.com/RVTlBBO.png)](http://i.imgur.com/RVTlBBO.png) 
 
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
