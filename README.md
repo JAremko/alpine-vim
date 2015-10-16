@@ -104,4 +104,4 @@ export -f ed
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on your system.
   - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine([instruction](https://github.com/JAremko/alpine-vim/blob/master/powerline.md)). But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)   
-  - **I managed to strip down the image from around 300MB to almost 100MB. Hopefully without breaking things. Leave a comment if you found a bug or if you have a suggestion.**
+  - **Leave a comment if you found a bug or if you have a suggestion.**
