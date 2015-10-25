@@ -1,5 +1,5 @@
 `jare/vim-bundle:latest`   
-[![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest')  
+[![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest') - *uncompressed size*
 
 #### For the more *"IDE like experience"* try [`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)  
 [![](http://i.imgur.com/RVTlBBO.png)](http://i.imgur.com/RVTlBBO.png) 
