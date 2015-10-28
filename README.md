@@ -103,5 +103,6 @@ export -f ed
   - `<Leader>` mapped to `,`. I use the basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/tree/master/vimrcs)  
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on your system.
   - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine([instruction](https://github.com/JAremko/alpine-vim/blob/master/powerline.md)). But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)
-![With and without](http://i.imgur.com/yRWBFgn.jpg)   
+![With and without](http://i.imgur.com/yRWBFgn.jpg)    
+  -  If the Golang auto-complete doesn't work  try  `go install` package  
   - **Leave a comment if you found a bug or if you have a suggestion.**
