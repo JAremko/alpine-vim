@@ -102,6 +102,7 @@ export -f ed
       - use mouse right button menu by holding `Shift`.
   - `<Leader>` mapped to `,`. I use the basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/tree/master/vimrcs)  
   - It's generally good idea to remap `Caps Lock` to the `Esc` key on your system.
+  - If Vim doesn't look right in the tmux try launching tmux `tmux -2`
   - To see fancy arrows you need `PowerlineFonts` http://goo.gl/gBeVbk on your machine([instruction](https://github.com/JAremko/alpine-vim/blob/master/powerline.md)). But if you don't need them remove `let g:airline_powerline_fonts = 1` from the [.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)    
   -  If the Golang auto-complete doesn't work  try  `go install` package  
