@@ -3,10 +3,10 @@
 
 [![](http://i.imgur.com/G6KybVM.png)](http://i.imgur.com/G6KybVM.png) 
 
-#### For the more *"IDE like experience"* try [`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)  
+#### For the more *"IDE like experience"* try [[`jare/drop-in`](https://hub.docker.com/r/jare/drop-in/)](https://hub.docker.com/r/jare/drop-in/)  
 [![](http://i.imgur.com/RVTlBBO.png)](http://i.imgur.com/RVTlBBO.png) 
 
-#### Or Vim/Emacs hybrid [`jare/spacemacs`](https://hub.docker.com/r/jare/spacemacs/)[![](http://i.imgur.com/PjGF8iY.png)](http://i.imgur.com/PjGF8iY.png) 
+#### Or Vim/Emacs hybrid [[`jare/spacemacs`](https://hub.docker.com/r/jare/spacemacs/)](https://hub.docker.com/r/jare/spacemacs/)[![](http://i.imgur.com/PjGF8iY.png)](http://i.imgur.com/PjGF8iY.png) 
 
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
 ###### **The best way to use:**  
