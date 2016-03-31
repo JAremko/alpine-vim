@@ -7,7 +7,7 @@
 [![](http://i.imgur.com/RVTlBBO.png)](http://i.imgur.com/RVTlBBO.png) 
 
 #### [Or Vim/Emacs hybrid `jare/spacemacs`](https://hub.docker.com/r/jare/spacemacs/)   
-[![](http://i.imgur.com/PjGF8iY.png)](http://i.imgur.com/PjGF8iY.png) 
+[![](https://raw.githubusercontent.com/syl20bnr/spacemacs/master/doc/img/spacemacs-python.png)](https://raw.githubusercontent.com/syl20bnr/spacemacs/master/doc/img/spacemacs-python.png) 
 
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
 ###### **The best way to use:**  
