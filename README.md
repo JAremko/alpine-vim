@@ -1,5 +1,4 @@
-`jare/vim-bundle:latest`   
-[![jare/vim-bundle:latest](https://badge.imagelayers.io/jare/vim-bundle:latest.svg)](https://imagelayers.io/?images=jare/vim-bundle:latest 'jare/vim-bundle:latest') - *uncompressed size*
+#### `jare/vim-bundle:latest`   
 
 [![](http://i.imgur.com/G6KybVM.png)](http://i.imgur.com/G6KybVM.png) 
 
