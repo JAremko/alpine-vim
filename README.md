@@ -111,5 +111,5 @@ export -f ed
 ![With and without](http://i.imgur.com/yRWBFgn.jpg)    
   -  If the Golang auto-complete doesn't work  try  `go install` package  
   
- **Leave a comment if you found a bug or if you have a suggestion**  
- **Any contribution to this image or `vim-typescript` and `vim-go-tools` images are greatly appreciated as well as new runtime containers!**
+  - **Leave a comment if you found a bug or if you have a suggestion**
+  - **Any contribution to this image or `vim-typescript` and `vim-go-tools` images are greatly appreciated as well as new runtime containers!**
