@@ -1,4 +1,4 @@
-`jare/alpine-vim:latest` [![jare/alpine-vim:latest](https://badge.imagelayers.io/jare/alpine-vim:latest.svg)](https://imagelayers.io/?images=jare/alpine-vim:latest 'jare/alpine-vim:latest')
+`jare/alpine-vim:latest`
 
 Vim package from the Alpine repository lacks "pythoninterp"(required for some of my plugins). So I made this base image with a custom Vim build. Also I removed, tutorials and other unnecessary files.
 
