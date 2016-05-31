@@ -7,7 +7,7 @@ ADD tidy-viml /util/
 RUN apk add --update --virtual build-deps python python-dev ctags build-base \
       make mercurial libxpm-dev libx11-dev libxt-dev ncurses-dev git           && \
     cd /tmp                                                                    && \
-    hg clone https://code.google.com/p/vim/                                    && \
+    git clone https://github.com/vim/vim                                       && \
     cd /tmp/vim                                                                && \
     ./configure --with-features=big \
                 #needed for editing text in languages which have many characters
