@@ -64,6 +64,7 @@
 40. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
 41. [Vimproc.vim](https://github.com/Valloric/YouCompleteMe) Interactive command execution in Vim
 42. [Tsuquyomi](https://github.com/Quramy/tsuquyomi) A Vim plugin for TypeScript
+43. [Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim) syntax file for Docker's Dockerfile and snippets for snipMate    
 
 *[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)*
 
