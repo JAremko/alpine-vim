@@ -68,6 +68,7 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/leafgarland/typescript-vim.git                                       && \
     git clone --depth 1 https://github.com/christoomey/vim-tmux-navigator.git                                   && \
     git clone --depth 1 https://github.com/Quramy/tsuquyomi.git                                                 && \
+    git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim.git                                          && \
 #Cleanup
     sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1
     
