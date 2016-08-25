@@ -78,6 +78,7 @@ RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~                       
      curl -s https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim >> /home/developer/.vimrc~ && \
      cat  /home/developer/my.vimrc >> /home/developer/.vimrc~                                                   && \
      rm /home/developer/my.vimrc                                                                                && \
+     sed -i '/colorscheme peaksea/d' /home/developer/.vimrc~                                                    && \
      sh /util/tidy-viml /home/developer/.vimrc~     
 
 #Pathogen help tags generation
