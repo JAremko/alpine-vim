@@ -21,7 +21,7 @@ RUN apk --update add curl ctags git python bash ncurses-terminfo                
     cd /home/developer/bundle/vimproc.vim                                                                       && \
     make                                                                                                        && \
 #Cleanup
-    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp /usr/lib/go  \
+    rm -rf /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp /usr/lib/go                                   \
       /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes                                      && \
     apk del build-deps                                                                                          && \
     apk add libxt libx11 libstdc++                                                                              && \
@@ -43,7 +43,7 @@ RUN cd /home/developer/bundle/                                                  
     git clone --depth 1 https://github.com/vim-scripts/EasyGrep.git                                             && \
     git clone --depth 1 https://github.com/jlanzarotta/bufexplorer.git                                          && \
     git clone --depth 1 https://github.com/kien/ctrlp.vim.git                                                   && \
-    git clone --depth 1 https://github.com/scrooloose/nerdtree.git                                              && \ 
+    git clone --depth 1 https://github.com/scrooloose/nerdtree.git                                              && \
     git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git                                          && \
     git clone --depth 1 https://github.com/scrooloose/syntastic.git                                             && \
     git clone --depth 1 https://github.com/tomtom/tlib_vim.git                                                  && \
