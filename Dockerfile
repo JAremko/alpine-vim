@@ -9,11 +9,11 @@ ENV UID="1000" \
     UHOME=/home/developer
 
 # Used to configure YouCompleteMe
-ENV GOBIN $GOROOT/bin \
-    GOPATH $UHOME/workspace \
-    GOROOT /usr/lib/go \
-    NODEBIN /usr/lib/node_modules/bin \
-    PATH $PATH:$GOBIN:$GOPATH/bin:$NODEBIN
+ENV GOROOT="/usr/lib/go"
+ENV GOBIN="$GOROOT/bin"
+ENV GOPATH="$UHOME/workspace"
+ENV NODEBIN="/usr/lib/node_modules/bin"
+ENV PATH="$PATH:$GOBIN:$GOPATH/bin:$NODEBIN"
 
 # User
 RUN apk --no-cache add sudo \
