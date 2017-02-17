@@ -100,13 +100,14 @@ function ed() {
     -v $('pwd'):/home/developer/workspace 'jare/vim-bundle' "${@}"
 }
 export -f ed
- ``` 
+ ```
 ###### **Keep in mind:**
   - With something like GNOME terminal You should be able to:
-      - drag and drop text into the Vim.
-      - use mouse right button menu by holding `Shift`.
+    - drag and drop text into the Vim.
+    - use mouse right button menu by holding `Shift`.
   - `<Leader>` mapped to `,`. I use the basic mappings from the great [amix .vimrc](https://github.com/amix/vimrc/tree/master/vimrcs)
+  - You can set the user with the ENV variables [in the Dockerfile](https://github.com/JAremko/alpine-vim/blob/master/Dockerfile#L3)
   - If Vim or Powerline doesn't look right in the tmux try `tmux -2`
-  -  If the Golang auto-complete doesn't work  try  `go install` package
+  - If the Golang auto-complete doesn't work  try  `go install` package
   - **Leave a comment if you found a bug or if you have a suggestion**
   - **Any contribution to this image or `vim-typescript` and `vim-go-tools` images are greatly appreciated as well as new runtime containers!**

@@ -1,12 +1,64 @@
-FROM jare/vim-wrapper:latest
+FROM jare/alpine-vim:latest
 
-MAINTAINER JAremko <w3techplaygound@gmail.com>
+# User config
+ENV UID="1000" \
+    UNAME="developer" \
+    GID="1000" \
+    GNAME="developer" \
+    SHELL="/bin/bash" \
+    UHOME=/home/developer
 
-LABEL jare-compatible-dockerized-vim="true"
+# Used to configure YouCompleteMe
+ENV GOBIN $GOROOT/bin \
+    GOPATH $UHOME/workspace \
+    GOROOT /usr/lib/go \
+    NODEBIN /usr/lib/node_modules/bin \
+    PATH $PATH:$GOBIN:$GOPATH/bin:$NODEBIN
 
-COPY .vimrc /home/developer/my.vimrc
+# User
+RUN apk --no-cache add sudo \
+# Create HOME dir
+    && mkdir -p "${UHOME}" \
+    && chown "${UID}":"${GID}" "${UHOME}" \
+# Create user
+    && echo "${UNAME}:x:${UID}:${GID}:${UNAME},,,:${UHOME}:${SHELL}" \
+    >> /etc/passwd \
+    && echo "${UNAME}::17032:0:99999:7:::" \
+    >> /etc/shadow \
+# No password sudo
+    && echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" \
+    > "/etc/sudoers.d/${UNAME}" \
+    && chmod 0440 "/etc/sudoers.d/${UNAME}" \
+# Create group
+    && echo "${GNAME}:x:${GID}:${UNAME}" \
+    >> /etc/group
 
-# Plugins deps
+# Install Pathogen
+RUN apk --no-cache add curl \
+    && mkdir -p \
+    $UHOME/bundle \
+    $UHOME/.vim/autoload \
+    $UHOME/.vim_runtime/temp_dirs \
+    && curl -LSso \
+    $UHOME/.vim/autoload/pathogen.vim \
+    https://tpo.pe/pathogen.vim \
+    && echo "execute pathogen#infect('$UHOME/bundle/{}')" \
+    > $UHOME/.vimrc \
+    && echo "syntax on " \
+    >> $UHOME/.vimrc \
+    && echo "filetype plugin indent on " \
+    >> $UHOME/.vimrc \
+# Cleanup
+    && apk del curl
+
+# Vim wrapper
+COPY run /usr/local/bin/
+#custom .vimrc stub
+RUN mkdir -p /ext  && echo " " > /ext/.vimrc
+
+COPY .vimrc $UHOME/my.vimrc
+
+# Vim plugins deps
 RUN apk --update add \
     bash \
     ctags \
@@ -23,10 +75,10 @@ RUN apk --update add \
     perl \
     python-dev \
     && git clone --depth 1  https://github.com/Valloric/YouCompleteMe \
-    /home/developer/bundle/YouCompleteMe/ \
-    && cd /home/developer/bundle/YouCompleteMe \
+    $UHOME/bundle/YouCompleteMe/ \
+    && cd $UHOME/bundle/YouCompleteMe \
     && git submodule update --init --recursive \
-    && /home/developer/bundle/YouCompleteMe/install.py --gocode-completer \
+    && $UHOME/bundle/YouCompleteMe/install.py --gocode-completer \
 # Node.js deps
     && apk add \
     libgcc \
@@ -34,28 +86,29 @@ RUN apk --update add \
     libuv \
 # Install and compile procvim.vim                                                                               
     && git clone --depth 1 https://github.com/Shougo/vimproc.vim \
-    /home/developer/bundle/vimproc.vim \
-    && cd /home/developer/bundle/vimproc.vim \
+    $UHOME/bundle/vimproc.vim \
+    && cd $UHOME/bundle/vimproc.vim \
     && make \
+    && chown $UID:$GID -R $UHOME \
 # Cleanup
-    && rm -rf \
-    /home/developer/bundle/YouCompleteMe/third_party/ycmd/clang_includes \
-    /home/developer/bundle/YouCompleteMe/third_party/ycmd/cpp \
-    /usr/lib/go \
     && apk del build-deps \
     && apk add \
     libxt \
     libx11 \
     libstdc++ \
-    && sh /util/ocd-clean / > /dev/null 2>&1 \
     && rm -rf \
+    $UHOME/bundle/YouCompleteMe/third_party/ycmd/clang_includes \
+    $UHOME/bundle/YouCompleteMe/third_party/ycmd/cpp \
+    /usr/lib/go \
     /var/cache/* \
     /var/log/* \
     /var/tmp/* \
     && mkdir /var/cache/apk
 
+USER $UNAME
+
 # Plugins
-RUN cd /home/developer/bundle/ \
+RUN cd $UHOME/bundle/ \
     && git clone --depth 1 https://github.com/pangloss/vim-javascript \
     && git clone --depth 1 https://github.com/scrooloose/nerdcommenter \
     && git clone --depth 1 https://github.com/godlygeek/tabular \
@@ -98,30 +151,27 @@ RUN cd /home/developer/bundle/ \
     && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
 # Theme
     && git clone --depth 1 \
-    https://github.com/altercation/vim-colors-solarized \
-# Cleanup
-    && sh /util/ocd-clean /home/developer/bundle/  > /dev/null 2>&1
+    https://github.com/altercation/vim-colors-solarized
     
 # Build default .vimrc
-RUN  mv -f /home/developer/.vimrc /home/developer/.vimrc~ \
+RUN  mv -f $UHOME/.vimrc $UHOME/.vimrc~ \
      && curl -s \
      https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim \
-     >> /home/developer/.vimrc~ \
+     >> $UHOME/.vimrc~ \
      && curl -s \
      https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/extended.vim \
-     >> /home/developer/.vimrc~ \
-     && cat  /home/developer/my.vimrc \
-     >> /home/developer/.vimrc~ \
-     && rm /home/developer/my.vimrc \
-     && sed -i '/colorscheme peaksea/d' /home/developer/.vimrc~ \
-     && sh /util/tidy-viml /home/developer/.vimrc~
+     >> $UHOME/.vimrc~ \
+     && cat  $UHOME/my.vimrc \
+     >> $UHOME/.vimrc~ \
+     && rm $UHOME/my.vimrc \
+     && sed -i '/colorscheme peaksea/d' $UHOME/.vimrc~
 
-#Pathogen help tags generation
+# Pathogen help tags generation
 RUN vim -E -c 'execute pathogen#helptags()' -c q ; return 0
 
-ENV GOPATH /home/developer/workspace
-ENV GOROOT /usr/lib/go
-ENV GOBIN $GOROOT/bin
-ENV NODEBIN /usr/lib/node_modules/bin
-ENV PATH $PATH:$GOBIN:$GOPATH/bin:$NODEBIN
-ENV HOME /home/developer
+ENV TERM=xterm-256color
+
+# List of Vim plugins to disable
+ENV DISABLE=""
+
+ENTRYPOINT ["sh", "/usr/local/bin/run"]

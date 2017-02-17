@@ -1,8 +1,6 @@
-FROM jare/alpine:latest
+FROM alpine:latest
 
 MAINTAINER JAremko <w3techplaygound@gmail.com>
-
-ADD tidy-viml /util/
 
 RUN apk add --update --virtual build-deps \
     build-base \
@@ -40,7 +38,6 @@ RUN apk add --update --virtual build-deps \
     /var/cache/* \
     /var/log/* \
     /var/tmp/* \
-    && mkdir /var/cache/apk \
-    && sh /util/ocd-clean /usr/share
+    && mkdir /var/cache/apk
 
 ENTRYPOINT ["vim"]
