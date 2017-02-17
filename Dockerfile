@@ -12,8 +12,7 @@ ENV UID="1000" \
 ENV GOROOT="/usr/lib/go"
 ENV GOBIN="$GOROOT/bin"
 ENV GOPATH="$UHOME/workspace"
-ENV NODEBIN="/usr/lib/node_modules/bin"
-ENV PATH="$PATH:$GOBIN:$GOPATH/bin:$NODEBIN"
+ENV PATH="$PATH:$GOBIN:$GOPATH/bin"
 
 # User
 RUN apk --no-cache add sudo \
@@ -79,12 +78,7 @@ RUN apk --update add \
     && cd $UHOME/bundle/YouCompleteMe \
     && git submodule update --init --recursive \
     && $UHOME/bundle/YouCompleteMe/install.py --gocode-completer \
-# Node.js deps
-    && apk add \
-    libgcc \
-    libstdc++ \
-    libuv \
-# Install and compile procvim.vim                                                                               
+# Install and compile procvim.vim                        
     && git clone --depth 1 https://github.com/Shougo/vimproc.vim \
     $UHOME/bundle/vimproc.vim \
     && cd $UHOME/bundle/vimproc.vim \
@@ -145,9 +139,7 @@ RUN cd $UHOME/bundle/ \
     && git clone --depth 1 https://github.com/SirVer/ultisnips \
     && git clone --depth 1 https://github.com/honza/vim-snippets \
     && git clone --depth 1 https://github.com/derekwyatt/vim-scala \
-    && git clone --depth 1 https://github.com/leafgarland/typescript-vim \
     && git clone --depth 1 https://github.com/christoomey/vim-tmux-navigator \
-    && git clone --depth 1 https://github.com/Quramy/tsuquyomi \
     && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
 # Theme
     && git clone --depth 1 \

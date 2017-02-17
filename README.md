@@ -56,24 +56,19 @@
 32. [Vim-less](https://github.com/groenewege/vim-less) *vim syntax for LESS (dynamic CSS)* 
 33. [HTML5.vim](https://github.com/othree/html5.vim) *HTML5 omnicomplete and syntax* 
 34. [Vim-json](https://github.com/elzr/vim-json) *Syntax highlighting for JSON in Vim* 
-35. [Vim-TypeScript](https://github.com/leafgarland/typescript-vim) *Syntax file and other settings for TypeScript.*
-36. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*
-37. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*
-38. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys*
-39. [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
-40. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
-41. [Vimproc.vim](https://github.com/Shougo/vimproc.vim) Interactive command execution in Vim
-42. [Tsuquyomi](https://github.com/Quramy/tsuquyomi) A Vim plugin for TypeScript
-43. [Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim) syntax file for Docker's Dockerfile and snippets for snipMate
+35. [Vim-addon-mw-utils](https://github.com/marcweber/vim-addon-mw-utils) *vim: interpret a file by function and cache file automatically*
+36. [Tlib](https://github.com/tomtom/tlib_vim) *Some utility functions for VIM*
+37. [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) *to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys*
+38. [UltiSnips](https://github.com/SirVer/ultisnips) The ultimate snippet solution for Vim! 
+39. [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Fast, as-you-type, fuzzy-search code completion
+40. [Vimproc.vim](https://github.com/Shougo/vimproc.vim) Interactive command execution in Vim
+42. [Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim) syntax file for Docker's Dockerfile and snippets for snipMate
 
 *[.vimrc](https://github.com/JAremko/alpine-vim/blob/master/.vimrc)*
 
 ###### **Working with Golang:**
   - For the full Golang support you need to mount `/usr/lib/go`. For example, run [`jare/go-tools`](https://hub.docker.com/r/jare/go-tools/) in the detached mode `docker create -v /usr/lib/go --name vim-go-tools jare/go-tools /bin/true` and mount its volumes like this `docker run ...  --volumes-from vim-go-tools ... jare/vim-bundle` or add it to the alias `alias edit="docker run -ti --rm --volumes-from go-tools -v $(pwd):/home/developer/workspace jare/vim-bundle"`
   - If you want to use a [go-tool](https://hub.docker.com/r/jare/go-tools/) , but [vim-go](https://github.com/fatih/vim-go) doesn't provide a shorthand - you can simply type, for example, `:!gofmt %` and it will output formatted source of the current buffers(`%:p ` absolute file path, `%:h` head of the file name and `%:p:h` is the current directory). If you want to overwrite - use `:% ! gofmt %` The `gofmt` tool used as an example, actually, it covered in vim-go.
-
-###### **Working with typescript/Node.js:**
-  Same as with the Golang tools. You can use [`jare/typescript`](https://hub.docker.com/r/jare/typescript) and mount it in to the `/usr/lib/node_modules/` 
  
 ###### Alternatively, you can put something like this into .bashrc to automatically bootstrap all containers:  
 
@@ -81,22 +76,14 @@
 #docker vim-bunlde
 function ed() {
   local dtc_id=$(docker ps -a -q --filter 'name=vim-go-tools')
-  local ts_id=$(docker ps -a -q --filter 'name=vim-typescript')
   if [[ -z "${dtc_id}" ]]; then
    echo 'vim-go-tools container not found. Creating...'
    docker create -v '/usr/lib/go' --name 'vim-go-tools' \
      'jare/go-tools' '/bin/true'
    echo 'Done!'
   fi
-  if [[ -z "${ts_id}" ]]; then
-   echo 'vim-typescript container not found. Creating...'
-   docker create -v '/usr/lib/node_modules' \
-     --name 'vim-typescript' 'jare/typescript' '/bin/true'
-   echo 'Done!'
-  fi
   echo 'Starting Vim'
   docker run -ti --rm -p 8080:8080 --volumes-from 'vim-go-tools' \
-    --volumes-from 'vim-typescript' \
     -v $('pwd'):/home/developer/workspace 'jare/vim-bundle' "${@}"
 }
 export -f ed
@@ -110,4 +97,4 @@ export -f ed
   - If Vim or Powerline doesn't look right in the tmux try `tmux -2`
   - If the Golang auto-complete doesn't work  try  `go install` package
   - **Leave a comment if you found a bug or if you have a suggestion**
-  - **Any contribution to this image or `vim-typescript` and `vim-go-tools` images are greatly appreciated as well as new runtime containers!**
+  - **Any contribution are greatly appreciated as well as new runtime containers!**
