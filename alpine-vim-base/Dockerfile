@@ -31,7 +31,7 @@ RUN git clone https://github.com/vim/vim \
     --with-python-config-dir=/usr/lib/python2.7/config \
  && make install
  
- FROM alpin:latest
+ FROM alpine:latest
  
  COPY --from=builder /usr/local/bin/ /usr/local/bin
  COPY --from=builder /usr/local/share/vim/ /usr/local/share/vim/
