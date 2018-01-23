@@ -17,7 +17,7 @@ RUN apk add --no-cache \
     make \
     ncurses-dev \
     python \
-    python-dev \
+    python-dev
 
 # Build vim from git source
 RUN git clone https://github.com/vim/vim \
@@ -27,15 +27,14 @@ RUN git clone https://github.com/vim/vim \
     --disable-netbeans \
     --enable-multibyte \
     --enable-pythoninterp \
-    --prefix /tmp/build \
     --with-features=big \
     --with-python-config-dir=/usr/lib/python2.7/config \
  && make install
  
  FROM alpin:latest
  
- COPY --from=builder /tmp/build/bin/ /usr/bin
- COPY --from=builder /tmp/build/share/vim/ /usr/share/vim/
+ COPY --from=builder /usr/local/bin/ /usr/local/bin
+ COPY --from=builder /usr/local/share/vim/ /usr/local/share/vim/
  # NOTE: man page is ignored
  
  RUN apk add --no-cache \
