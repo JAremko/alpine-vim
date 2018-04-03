@@ -9,6 +9,7 @@
 [![](https://raw.githubusercontent.com/syl20bnr/spacemacs/master/doc/img/spacemacs-python.png)](https://raw.githubusercontent.com/syl20bnr/spacemacs/master/doc/img/spacemacs-python.png) 
 
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
+*Make sure to use "Solarized Dark" compatible theme or color palette may look weird.*  
 ###### **The best way to use:**  
 **Make an alias:**
 `alias edit='docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle'`
