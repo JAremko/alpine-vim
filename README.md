@@ -10,6 +10,8 @@
 
 ####  Based on ["The Ultimate vimrc"](https://github.com/amix/vimrc)  
 *Make sure to use "Solarized Dark" compatible theme or color palette may look weird.*  
+*You can configure terminal color mode by setting TERM variable `docker run ... -e TERM=<VALUE> jare/vim-bundle `
+By default the `<VALUE>` is `xterm-256color` but for the "less colorful" terminals set it to `xterm`.*
 ###### **The best way to use:**  
 **Make an alias:**
 `alias edit='docker run -ti --rm -v $(pwd):/home/developer/workspace jare/vim-bundle'`
