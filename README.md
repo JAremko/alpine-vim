@@ -22,7 +22,7 @@ By default the `<VALUE>` is `xterm-256color` but for the "less colorful" termina
 ###### **How to add your plugins and .vimrc:**
   1. Create a folder with your `.vimrc` file and, if you want to add plugins, subfolder called `bundle` with them.
   2. mount it: `docker run ... -v <***>/my-stuff:/ext/ ... jare/vim-bundle` 
-  *But the best we will be extending this container.*
+  *But the best way will be extending this container.*
 
 ###### **Plugins:**  
 1. [Airline](https://github.com/bling/vim-airline)  *Lean & mean status/tabline for vim that's light as air*

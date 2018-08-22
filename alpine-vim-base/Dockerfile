@@ -38,6 +38,7 @@ RUN git clone https://github.com/vim/vim \
  # NOTE: man page is ignored
  
  RUN apk add --no-cache \
+    diffutils \
     libice \
     libsm \
     libx11 \
