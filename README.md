@@ -76,7 +76,7 @@ By default the `<VALUE>` is `xterm-256color` but for the "less colorful" termina
 ###### Alternatively, you can put something like this into .bashrc to automatically bootstrap all containers:  
 
  ``` bash
-#docker vim-bunlde
+#docker vim-bundle
 function ed() {
   local dtc_id=$(docker ps -a -q --filter 'name=vim-go-tools')
   if [[ -z "${dtc_id}" ]]; then
