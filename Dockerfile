@@ -57,6 +57,8 @@ RUN mkdir -p /ext  && echo " " > /ext/.vimrc
 
 COPY .vimrc $UHOME/my.vimrc
 
+COPY .bashrc $UHOME/.bashrc
+
 # Vim plugins deps
 RUN apk --update add \
     bash \

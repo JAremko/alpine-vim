@@ -6,5 +6,6 @@ echo "execute pathogen#infect('/ext/bundle/{}')" >> .vimrc
 mkdir -p /home/developer/.vim_runtime/temp_dirs
 cat .vimrc~ >> .vimrc
 echo "source /ext/.vimrc" >> .vimrc
+source /home/developer/.bashrc
 cd /home/developer/workspace/
 vim $@
